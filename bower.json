@@ -1,0 +1,28 @@
+{
+  "name": "FUNDOO_HR",
+  "authors": [
+    "prsharma0403 <prsharma0403@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.1",
+    "angular-sanitize": "^1.6.0",
+    "satellizer": "^0.15.5",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.1",
+    "angular-toastr": "^2.1.1",
+    "angular-resource": "^1.6.1",
+    "angular-material-icons": "^0.7.1"
+  },
+  "private": true
+}

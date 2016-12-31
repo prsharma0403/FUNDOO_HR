@@ -1,0 +1,58 @@
+[
+  {
+    "employeeName":"pp",
+    "employeeStatus": "Fellowship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "artipatel@bridgelabz.com"
+     },
+ {
+     "employeeName":"naveen",
+    "employeeStatus": "Internship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "pp@bridgelabz.com"
+
+     },
+{
+    "employeeName":"sohail",
+    "employeeStatus": "Fellowship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "pp@bridgelabz.com"
+     },
+{"employeeName":"amit",
+    "employeeStatus": "Fellowship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "pp@bridgelabz.com"
+     },
+{
+    "employeeName":"durga",
+    "employeeStatus": "Fellowship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "pp@bridgelabz.com"
+     },
+{
+    "employeeName":"hamid",
+    "employeeStatus": "Fellowship",
+    "company": "BridgeLabz",
+    "mobile":"1234567890",
+      "emailId" : "pp@bridgelabz.com"
+     },
+     {
+         "employeeName":"mam",
+         "employeeStatus": "Internship",
+         "company": "BridgeLabz",
+         "mobile":"1234567890",
+           "emailId" : "pp@bridgelabz.com"
+          },
+          {
+              "employeeName":"swat",
+              "employeeStatus": "Internship",
+              "company": "BridgeLabz",
+              "mobile":"1234567890",
+                "emailId" : "pp@bridgelabz.com"
+               },
+]

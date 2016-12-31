@@ -1,0 +1,31 @@
+body>span, body>h3 { float:left; margin:0; padding:0; margin-bottom:10px; }
+span { color:#6fb8d9;
+          >b { color:#d8d1c7; }
+      }
+      @header-height:40px;
+
+      .header {height:@header-height;font-size:30px; color:#3b5372;
+
+          /*>i.fa-angle-left { text-align:left; }*/
+          >i.fa-angle-right { text-align:right;}
+          span { width:auto;.border-box;text-align:center; color:inherit; }
+      }
+
+      .vertical-centre (@height) { height:@height;  display:inline-block; vertical-align:middle; } .border-box { box-sizing:border-box; -moz-box-sizing:border-box; }
+      @border-colour:#d8d1c7;
+      .calendar { float:left; display:block;background:white;margin-left: 150px;width:775px; border:solid 1px @border-colour; margin-bottom:40px;border-radius: 8px;border-width:3px;border-color: #6fb8d9;
+          /*@secondary-colour:#d8d1c7;*/
+          @spacing:5px;
+
+          @icon-width:40px;
+
+          div.week { float:left; width:100%; border-top:solid 1px @border-colour;
+
+              span.day { float:left; width:100%/7; .border-box; border-left:solid 1px @border-colour; font-size:24px; text-align:center; .vertical-centre(70px); background:white; cursor:pointer;
+
+                  /*&.today { background:white; }*/
+                  &.different-month { color:white; }
+
+              }
+          }
+      }
