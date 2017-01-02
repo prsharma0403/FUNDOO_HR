@@ -6,7 +6,7 @@ font-style: normal;
 }
 @font-face {
 font-family: 'LucidaGrande-Bold';
-src: url('../font/lLucidaGrande-Bold.ttf') format('truetype');
+src: url('../font/LucidaGrande-Bold') format('truetype');
 font-weight: bold;
 font-style: normal;
 }

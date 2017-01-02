@@ -12,59 +12,59 @@ $scope.items = [{
         employeeStatus: 'Internship',
         company: 'BridgeLabz',
         mobile:'1234567890',
-        emailId : 'pp@bridgelabz.com',
-        src: 'images/rsz_431.jpg'
+        emailId :'pp@bridgelabz.com',
+        src: 'images/pppp profilepic.jpg'
       },
       {
           employeeName:'sohail',
           employeeStatus: 'Fellowship',
           company: 'BridgeLabz',
           mobile:'1234567890',
-          emailId : 'pp@bridgelabz.com',
-          src: 'images/rsz_431.jpg'
+          emailId :'pp@bridgelabz.com',
+          src: 'images/pppp profilepic.jpg'
         },{
             employeeName:'amit',
             employeeStatus: 'Fellowship',
             company: 'BridgeLabz',
             mobile:'1234567890',
-            emailId : 'pp@bridgelabz.com',
-            src: 'images/rsz_431.jpg'
+            emailId :'pp@bridgelabz.com',
+            src: 'images/pppp profilepic.jpg'
           },  {
                 employeeName:'durga',
                 employeeStatus: 'Fellowship',
                 company: 'BridgeLabz',
                 mobile:'1234567890',
-                emailId : 'pp@bridgelabz.com',
-                src: 'images/rsz_431.jpg'
+                emailId :'pp@bridgelabz.com',
+                src: 'images/pppp profilepic.jpg'
               },{
                   employeeName:'hamid',
                   employeeStatus: 'Fellowship',
                   company: 'BridgeLabz',
                   mobile:'1234567890',
-                  emailId : 'pp@bridgelabz.com',
-                  src: 'images/rsz_431.jpg'
+                  emailId :'pp@bridgelabz.com',
+                  src: 'images/pppp profilepic.jpg'
                 },{
                       employeeName:'mam',
                       employeeStatus: 'Internship',
                       company: 'BridgeLabz',
                       mobile:'1234567890',
-                      emailId : 'pp@bridgelabz.com',
-                      src: 'images/rsz_431.jpg'
+                      emailId :'pp@bridgelabz.com',
+                      src: 'images/pppp profilepic.jpg'
                     },
                     {
                         employeeName:'sohail',
                         employeeStatus: 'Fellowship',
                         company: 'BridgeLabz',
                         mobile:'1234567890',
-                        emailId : 'pp@bridgelabz.com',
-                        src: 'images/rsz_431.jpg'
+                        emailId :'pp@bridgelabz.com',
+                        src: 'images/pppp profilepic.jpg'
                       },{
                           employeeName:'swat',
                           employeeStatus: 'Fellowship',
                           company: 'BridgeLabz',
                           mobile:'1234567890',
-                          emailId : 'pp@bridgelabz.com',
-                          src: 'images/rsz_431.jpg'
+                          emailId :'pp@bridgelabz.com',
+                          src: 'images/pppp profilepic.jpg'
                         }];
 
 
