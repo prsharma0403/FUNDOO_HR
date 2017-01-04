@@ -1,17 +1,19 @@
 .back {
 width: 30px;
 height: 30px;
-text-align: left;
+text-align:left;
 color: #3B5372;
 font-family: material;
 line-height: 0px;
 font-size: 30px;
 letter-spacing: 0px;
+margin-bottom: -80px;
 }
+
   .date1 {
 width: 1269px;
 height: 37px;
-text-align: left;
+text-align:right;
  color: #3B5372;
  font-family: AppleGothic;
  /*line-height: 0px;*/
@@ -29,7 +31,7 @@ line-height: 0px;
 font-size: 36px;
 letter-spacing: 0px;
 margin-left: 90%;
-margin-top:-3%;
+margin-top:-1%;
   }
   .unmarked {
     width: 85px;

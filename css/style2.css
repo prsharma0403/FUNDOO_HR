@@ -1,4 +1,4 @@
-.vertical-centre (@height) {
+/*.vertical-centre (@height) {
     height:@height;
     line-height:@height !important;
     display:inline-block;
@@ -113,4 +113,4 @@ calendar {
             font-weight:bold;
         }
     }
-}
+}*/

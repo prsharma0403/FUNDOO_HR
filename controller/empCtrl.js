@@ -8,63 +8,63 @@ angular.module('mainApp')
 function empCtrl($scope) {
   $scope.today = new Date();
 $scope.items = [{
-        employeeName:'naresh',
+        employeeName:'Naresh shanghvi',
         employeeStatus: 'Internship',
         company: 'BridgeLabz',
         mobile:'1234567890',
-        emailId :'pp@bridgelabz.com',
+        emailId :'artichabra@bridgelabz.com',
         src: 'images/pppp profilepic.jpg'
       },
       {
-          employeeName:'sohail',
+          employeeName:'Sohail taanveer',
           employeeStatus: 'Fellowship',
           company: 'BridgeLabz',
           mobile:'1234567890',
-          emailId :'pp@bridgelabz.com',
-          src: 'images/pppp profilepic.jpg'
+          emailId :'arti2793@bridgelabz.com',
+          src: 'images/431.png'
         },{
-            employeeName:'amit',
+            employeeName:'Amit arunthee',
             employeeStatus: 'Fellowship',
             company: 'BridgeLabz',
             mobile:'1234567890',
-            emailId :'pp@bridgelabz.com',
-            src: 'images/pppp profilepic.jpg'
+            emailId :'sushantsingh@bridgelabz.com',
+            src: 'images/virat_kohli.png'
           },  {
-                employeeName:'durga',
+                employeeName:'Durga Mahtab',
                 employeeStatus: 'Fellowship',
                 company: 'BridgeLabz',
                 mobile:'1234567890',
                 emailId :'pp@bridgelabz.com',
-                src: 'images/pppp profilepic.jpg'
+                src: 'images/ab_de_villiers.png'
               },{
-                  employeeName:'hamid',
+                  employeeName:'Hamid Raza Noori',
                   employeeStatus: 'Fellowship',
                   company: 'BridgeLabz',
                   mobile:'1234567890',
                   emailId :'pp@bridgelabz.com',
-                  src: 'images/pppp profilepic.jpg'
+                  src: 'images/sreenath_aravind.png'
                 },{
-                      employeeName:'mam',
+                      employeeName:'Shalini Reddy',
                       employeeStatus: 'Internship',
                       company: 'BridgeLabz',
                       mobile:'1234567890',
                       emailId :'pp@bridgelabz.com',
-                      src: 'images/pppp profilepic.jpg'
+                      src: 'images/stuart_binny.png'
                     },
                     {
-                        employeeName:'sohail',
+                        employeeName:'Sharad bhai pawar',
                         employeeStatus: 'Fellowship',
                         company: 'BridgeLabz',
                         mobile:'1234567890',
                         emailId :'pp@bridgelabz.com',
-                        src: 'images/pppp profilepic.jpg'
+                        src: 'images/praveen_dubey.png'
                       },{
-                          employeeName:'swat',
+                          employeeName:'Swati Dindule',
                           employeeStatus: 'Fellowship',
                           company: 'BridgeLabz',
                           mobile:'1234567890',
                           emailId :'pp@bridgelabz.com',
-                          src: 'images/pppp profilepic.jpg'
+                          src: 'images/yuzvendra_chahal.png'
                         }];
 
 
@@ -102,11 +102,13 @@ angular.module('mainApp')
             };
         },
         replace: true,
-        template: '<div class="item" style="height:auto;"><div class="item-int"><h4>{{item.employeeName}}</h4>\
+        template: '<div class="item">\
+        <div class="item-int"><h4>{{item.employeeName}}</h4>\
                 <div class="data"><img ng-src="{{item.src}}"/>\
-                <span class="left">{{item.employeeStatus}}</span>\
-                <span class="left">{{item.company}}</span>\
-                <span class="left">{{item.mobile}}</span>\
-                <span class="left">{{item.emailId}}</span></div></div></div>'
+                <table>\
+              <tr><td>{{item.employeeStatus}}</td><tr>\
+            <tr><td>{{item.company}}</td><tr>\
+            <tr><td>{{item.mobile}}</td><tr>\
+              <tr><td>{{item.emailId}}</td></tr></table></div></div></div>'
     };
 });

@@ -2,58 +2,61 @@
     <div class="row">
         <!-- Card Projects -->
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Summary
                      <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
+                       <span class="date2">{{ today | date : "dd, MMMM y" }}</span>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Fallout
-                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span>
-                     <!-- <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4> -->
+                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
+
+                     <span class="card-action"><a target="new_blank"></a></span></h4>
+<span class="date3">{{ today | date : "MMMM y" }}</span>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                 <div class="header">
                     <h4 class="text">Leave Summary
                      <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
+                      <span class="date4">{{ today | date : "MMMM y" }}</span>
                 </div>
             </div>
         </div>
     </div>
-    
     <div class="row">
         <!-- Card Projects -->
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                  <div class="header">
                     <span class="card-action"><a  ui-sref=".Engineers">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1"></h4><span>
+                        <h4 class="text1">Engineers</h4><span>
                  </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                 <div class="header">
                    <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1"></h4><span>
+                        <h4 class="text1">Clients</h4><span>
                  </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="card">
+            <div class="card1">
                 <div class="header">
                     <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1"></h4><span>
+                        <h4 class="text1">Reports</h4><span>
                  </div>
             </div>
         </div>

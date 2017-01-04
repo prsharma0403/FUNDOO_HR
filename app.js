@@ -50,7 +50,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
                       loginRequired: loginRequired
                     }
         })
-        .state('home.fallout',{
+        .state('home.attendence',{
             url:'attendence',
             templateUrl: 'templates/emp.html',
             controller: 'empCtrl',
@@ -62,6 +62,14 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
             url:'calender',
             templateUrl: 'templates/calender.html',
             controller: null,
+              resolve: {
+                      loginRequired: loginRequired
+                    }
+        })
+        .state('home.fallout', {
+            url: 'fallout',
+            templateUrl: 'templates/fallout.html',
+            controller: 'falloutCtrl',
               resolve: {
                       loginRequired: loginRequired
                     }
