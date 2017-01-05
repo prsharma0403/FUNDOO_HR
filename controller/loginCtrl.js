@@ -1,5 +1,6 @@
 angular.module('mainApp').controller('LoginCtrl', function ($scope, $state,$auth) {
-  
+  $scope.re=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+$scope.ps = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
   var config = {method: 'POST',url: 'http://192.168.0.171:3000/login'};
   $scope.login = function () {
     $auth.login($scope.user,config)

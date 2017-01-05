@@ -131,6 +131,10 @@ nav{
     font-weight:bold;
     letter-spacing: 0px;
     padding: 30px;
+    margin-left: -80px;
+     margin-top: -25px;
+}
+
 
 }
 .row ul li a{
@@ -144,6 +148,7 @@ nav{
     line-height: 0px;
     font-size: 16px;
     letter-spacing: 0px;
+    margin-bottom: 16px;
 }
 .date1{
     color: #3B5372 !important;
@@ -253,6 +258,7 @@ nav{
 }
 #mainNav{
       box-shadow: 1px 1px 5px 1px grey;
+
 }
 @media (max-width:760px){
     .text1{
@@ -322,4 +328,9 @@ nav{
 	.card1{
 		margin:5% auto auto 10%;
 	}
+}
+.navbar-default .navbar-nav>li>a {
+  color: #3B5372;
+    font-size: 18px;
+    font-family:LucidaGrande-Bold;
 }

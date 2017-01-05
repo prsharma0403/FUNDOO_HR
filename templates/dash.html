@@ -1,11 +1,13 @@
 <div class="container dash">
     <div class="row">
         <!-- Card Projects -->
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Summary
-                     <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
+
+                    <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
+                    <span class="card-action"><a target="new_blank"></a></span></h4>
                        <span class="date2">{{ today | date : "dd, MMMM y" }}</span>
                 </div>
             </div>
