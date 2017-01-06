@@ -117,7 +117,6 @@ angular.module('mainApp')
         },
         replace: true,
 
-
         template:
         '<div class="item">\
         <div class="item-int"><h4>{{item.employeeName}}</h4>\

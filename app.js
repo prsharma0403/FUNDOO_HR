@@ -63,17 +63,9 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
             templateUrl: 'templates/calender.html',
             controller: null,
               resolve: {
-            loginRequired: loginRequired
+                      loginRequired: loginRequired
                     }
         })
-        // .state('home.fallout', {
-        //     url: 'fallout',
-        //     templateUrl: 'templates/fallout.html',
-        //     controller: 'falloutCtrl',
-        //       resolve: {
-        //               loginRequired: loginRequired
-        //             }
-        // })
 
 
 

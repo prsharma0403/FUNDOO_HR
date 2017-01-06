@@ -1,72 +1,70 @@
-      <div class="container-fluid">
+<div class="container-fluid">
 
-        <!-- <a href="#">
-                     <span><img class="back" src="images/previous.png"/></img></span>
-                   </a>
-
-         <span class="date1"><center><b>{{ today | date : "MMMM y" }}</center></span>
-
-             <a href="#id">
-                <span><img class="mail1" src="images/email.png"/></img></span>
-             </a> -->
-             <div class="row">
-                 <div class="col-sm-4">
-                     <a href=" # ">
-                         <span><img class="back " src="images/previous.png "/></img></span>
-                     </a>
-                 </div>
-             <div class="col-sm-4">
-                     <span class="date1"><center><b>{{ today | date : "MMMM y" }}</center></span>
-             </div>
-                 <div class="col-sm-4">
-                     <!-- <a href="#id">
-                         <span><img class="mail1" src="images/email.png"/></img></span>
-                     </a> -->
-                     <span><img type="button" class="mail1" src="images/email.png"/ data-toggle="modal" data-target="#myModal"></img></span>
-                         <div class="modal fade" id="myModal" role="dialog">
-                             <div class="modal-dialog modal-sm">
-                                 <div  class="modal-content">
-                                         <p class="data">Do you want to send email alerts?</p>
-                                       </div>
-                                       <div>
-                                         <button id=btn type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                                         <button id=btn1 type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#mymodal1">Yes</button>
-                                 </div>
-                             </div>
-                           </div>
-                         <div class="modal fade" id="mymodal1" role="dialog">
-                             <div class="modal-dialog modal-sm">
-                                 <div  class="modal-content">
-                                         <p class="data1">Sent Successfully!</p>
-                                       </div>
-                                       <div>
-                                         <button id="btn2" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-                                 </div>
-                             </div>
-                         </div>
-
-
-
-                 </div>
-             </div>
-
-  <div><span class="rectangle">{{fall}}/{{totalEmployee}}</span>&nbsp&nbsp<span class="unmarked">Unmarked</span></div>
-        <itemCard></itemCard>
-      <div  class="row cards">
-            <div id="main1" class="col-lg-4 col-md-6 col-xs-12" ng-repeat="i in items">
-                <div item-card item="i"></div>
+       <!-- <a href="#">
+                    <span><img class="back" src="images/previous.png"/></img></span>
+                  </a>
+        <span class="date1"><center><b>{{ today | date : "MMMM y" }}</center></span>
+            <a href="#id">
+               <span><img class="mail1" src="images/email.png"/></img></span>
+            </a> -->
+            <div class="row">
+                <div class="col-sm-4">
+                    <a href=" # ">
+                        <span><img class="back " src="images/previous.png "/></img></span>
+                    </a>
+                </div>
+            <div class="col-sm-4">
+                    <span class="date1"><center><b>{{ today | date : "MMMM y" }}</center></span>
             </div>
-      </div>
+                <div class="col-sm-4">
+                    <!-- <a href="#id">
+                        <span><img class="mail1" src="images/email.png"/></img></span>
+                    </a> -->
+                    <span><img type="button" class="mail1" src="images/email.png"/ data-toggle="modal" data-target="#myModal"></img></span>
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog modal-sm">
+                                <div  class="modal-content">
+                                        <p class="data">Do you want to send email alerts?</p>
+                                      </div>
+                                      <div>
+                                        <button id=btn type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                        <button id=btn1 type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#mymodal1">Yes</button>
+                                </div>
+                            </div>
+                          </div>
+                        <div class="modal fade" id="mymodal1" role="dialog">
+                            <div class="modal-dialog modal-sm">
+                                <div  class="modal-content">
+                                        <p class="data1">Sent Successfully!</p>
+                                      </div>
+                                      <div>
+                                        <button id="btn2" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                                </div>
+                            </div>
+                        </div>
 
-        </div>
 
 
-        <!-- <itemCard></itemCard> -->
-      <!-- <div  class="row cards">
-            <div id="main1" class="col-lg-4 col-md-6 col-xs-12" ng-repeat="i in items">
-                <div item-card item="i"></div>
+                </div>
             </div>
-      </div> -->
 
-        </div>
-        <ui-view></ui-view>
+ <div><span class="rectangle">{{fall}}/{{totalEmployee}}</span>&nbsp&nbsp<span class="unmarked">Unmarked</span></div>
+       <itemCard></itemCard>
+     <div  class="row cards">
+           <div id="main1" class="col-lg-4 col-md-6 col-xs-12" ng-repeat="i in items">
+               <div item-card item="i"></div>
+           </div>
+     </div>
+
+       </div>
+
+
+       <!-- <itemCard></itemCard> -->
+     <!-- <div  class="row cards">
+           <div id="main1" class="col-lg-4 col-md-6 col-xs-12" ng-repeat="i in items">
+               <div item-card item="i"></div>
+           </div>
+     </div> -->
+
+       </div>
+       <ui-view></ui-view>

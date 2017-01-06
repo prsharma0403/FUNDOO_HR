@@ -6,13 +6,13 @@ font-style: normal;
 }
 @font-face {
 font-family: 'LucidaGrande-Bold';
-src: url('../font/LucidaGrande-Bold') format('truetype');
+src: url('../font/LucidaGrande-Bold.ttf')format('truetype');
 font-weight: bold;
 font-style: normal;
 }
 @font-face {
 font-family: 'Applegothic';
-src: url('../font/aplegothic.ttf format('truetype');
+src: url('../font/aplegothic.ttf') format('truetype');
 font-weight: normal;
 font-style: normal;
 }
