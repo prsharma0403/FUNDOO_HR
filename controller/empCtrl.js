@@ -8,10 +8,15 @@ angular.module('mainApp')
 function empCtrl($scope,$http) {
   console.log("fallout");
   $scope.today = new Date();
+
+
   $http({"url":"http://192.168.0.171:3000/readFalloutAttendanceEmployee?token=f12sd1fd2sf1&timeStamp="+Date.now(),
 "method":"GET"}).then(function(data){
   console.log(data.data);
   $scope.items= data.data.falloutEmployee;
+  $scope.fall=data.data.falloutNumber;
+  $scope.totalEmployee=data.data.totalEmployee;
+console.log("fall");
   }).catch(function(err){
     console.log(err);
   })
@@ -24,7 +29,7 @@ function empCtrl($scope,$http) {
 //         src: 'images/pppp profilepic.jpg'
 //       },
 //       {
-//           employeeName:'Sohail taanveer',
+//           employeeName:'Sohail taanveer',  // <div><span class="rectangle">2/100</span>&nbsp&nbsp<span class="unmarked">Unmarked</span></div>
 //           employeeStatus: 'Fellowship',
 //           company: 'BridgeLabz',
 //           mobile:'1234567890',
@@ -82,6 +87,7 @@ function empCtrl($scope,$http) {
 
     $scope.employees = function (employeeName, employeeStatus,company,mobile,emailId) {
         var objAdded = {
+
             employeeName:employeeName,
             employeeStatus:employeeStatus,
             company:company,
@@ -110,13 +116,18 @@ angular.module('mainApp')
             };
         },
         replace: true,
-        template: '<div class="item">\
+
+
+        template:
+        '<div class="item">\
         <div class="item-int"><h4>{{item.employeeName}}</h4>\
                 <div class="data"><img ng-src="{{item.src}}"/>\
                 <table>\
               <tr><td>{{item.employeeStatus}}</td><tr>\
             <tr><td>{{item.company}}</td><tr>\
+                <tr><td>{{item.falloutNumber}}</td><tr>\
+                    <tr><td>{{item.totalEmployee}}</td><tr>\
             <tr><td>{{item.mobile}}</td><tr>\
-              <tr><td>{{item.emailId}}</td></tr></table></div></div></div>'
+              <tr><td>{{item.emailId}}</td></tr></table></div></div></div></div>'
     };
 });
