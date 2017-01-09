@@ -21,15 +21,15 @@ angular.module("mainApp").directive("calendar", function() {
 
             scope.next = function() {
                 var next = scope.month.clone();
-                _removeTime(next.month(next.month()+1).date(1));
-                scope.month.month(scope.month.month()+1);
+                _removeTime(next.month(next.month() + 1).date(1));
+                scope.month.month(scope.month.month() + 1);
                 _buildMonth(scope, next, scope.month);
             };
 
             scope.previous = function() {
                 var previous = scope.month.clone();
-                _removeTime(previous.month(previous.month()-1).date(1));
-                scope.month.month(scope.month.month()-1);
+                _removeTime(previous.month(previous.month() - 1).date(1));
+                scope.month.month(scope.month.month() - 1);
                 _buildMonth(scope, previous, scope.month);
             };
         }
@@ -41,9 +41,14 @@ angular.module("mainApp").directive("calendar", function() {
 
     function _buildMonth(scope, start, month) {
         scope.weeks = [];
-        var done = false, date = start.clone(), monthIndex = date.month(), count = 0;
+        var done = false,
+            date = start.clone(),
+            monthIndex = date.month(),
+            count = 0;
         while (!done) {
-            scope.weeks.push({ days: _buildWeek(date.clone(), month) });
+            scope.weeks.push({
+                days: _buildWeek(date.clone(), month)
+            });
             date.add(1, "w");
             done = count++ > 2 && monthIndex !== date.month();
             monthIndex = date.month();

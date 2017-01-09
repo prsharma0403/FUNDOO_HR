@@ -1,6 +1,6 @@
-var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages', 'satellizer','toastr']);
-mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
-    var skipIfLoggedIn = ['$q', '$auth', function ($q, $auth) {
+var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages', 'satellizer', 'toastr', 'LocalStorageModule']);
+mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+    var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.reject();
@@ -10,7 +10,7 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
         return deferred.promise;
     }];
 
-    var loginRequired = ['$q', '$location', '$auth', function ($q, $location, $auth) {
+    var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.resolve();
@@ -38,33 +38,33 @@ mainApp.config( function ($stateProvider, $urlRouterProvider, $httpProvider, $au
             url: '/',
             templateUrl: 'templates/home.html',
             controller: 'HomeCtrl',
-              resolve: {
-                      loginRequired: loginRequired
-                    }
+            resolve: {
+                loginRequired: loginRequired
+            }
         })
-        .state('home.DashBoard',{
-            url:'dash',
+        .state('home.DashBoard', {
+            url: 'dash',
             templateUrl: 'templates/dash.html',
             controller: 'DashCtrl',
-              resolve: {
-                      loginRequired: loginRequired
-                    }
+            resolve: {
+                loginRequired: loginRequired
+            }
         })
-        .state('home.fallout',{
-            url:'attendence',
+        .state('home.fallout', {
+            url: 'attendence',
             templateUrl: 'templates/emp.html',
             controller: 'empCtrl',
-              resolve: {
-                      loginRequired: loginRequired
-                    }
+            resolve: {
+                loginRequired: loginRequired
+            }
         })
-        .state('home.Attendence',{
-            url:'calender',
+        .state('home.Attendence', {
+            url: 'calender',
             templateUrl: 'templates/calender.html',
             controller: null,
-              resolve: {
-                      loginRequired: loginRequired
-                    }
+            resolve: {
+                loginRequired: loginRequired
+            }
         })
 
 

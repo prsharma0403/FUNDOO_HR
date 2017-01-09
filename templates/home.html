@@ -10,9 +10,9 @@
                    <span class="icon-bar"></span>
       </button>
             <div class="nav-brand">
-                <img src="images/logo.png" width="43px" height="47px" class="logo">
+                <img src="images/logo.png"class="logo"></img>
                 <span style="color:#3B5372;">FundooHR </span>
-                </img>
+
             </div>
 
         </div>
@@ -21,16 +21,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="date"><span class="glyphicon glyphicon-time"style="color:#3B5372;"> {{today | date : "dd,MMMM y" }}</span>  </a>
+                <li><a class="date"><span class="glyphicon glyphicon-time"style="color:#3B5372;"> {{today | date :"dd,MMMM y" }}</span>  </a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle name" data-toggle="dropdown" id="name">
-                        <span class="glyphicon glyphicon-user"></span> {{name}}
-                        <span class="caret"></span></a>
+                        <span class="glyphicon glyphicon-user"style="color:#3B5372;"></span> {{name}}
+                        <span class="caret"style="color:#3B5372;"></span></a>
                     <ul class="dropdown-menu" id="block">
                         <li class="mail">prsharma0403@gmail.com</li>
                         <li ng-if="isAuth()">
-                          <a ui-sref="logout" class="logout"><span class="glyphicon glyphicon-off"></span>   logout</a>
+                            <a ui-sref="logout" class="logout"><span class="glyphicon glyphicon-off"style="color:#D8D1C7;"></span>   logout</a>
                         </li>
 
                     </ul>

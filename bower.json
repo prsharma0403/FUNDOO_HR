@@ -24,7 +24,9 @@
     "angular-resource": "^1.6.1",
     "angular-material-icons": "^0.7.1",
     "less": "^2.7.1",
-    "angular-local-storage": "^0.5.2"
+    "angular-local-storage": "^0.5.2",
+    "localstorage": "^1.4.2",
+    "local-storage-library": "*"
   },
   "private": true
 }

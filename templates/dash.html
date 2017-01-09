@@ -1,6 +1,7 @@
 <div class="container dash">
     <div class="row">
         <!-- Card Projects -->
+
         <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
@@ -8,57 +9,117 @@
 
                     <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
                     <span class="card-action"><a target="new_blank"></a></span></h4>
-                       <span class="date2">{{ today | date : "dd, MMMM y" }}</span>
+
+                    <div><center><span class="date2">{{ today | date : "dd, MMMM y" }}</span></center></div>
                 </div>
+                <center>
+                <table>
+
+                  <tr>
+                    <td>
+                    <h2><div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div></h2>
+                    </td>
+                    <td>
+                      <h2><div class="numberCircle1"><span>{{attendanceSummary.unmarked}}</span></div></h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <span style="color:green">Marked</span>
+                    </td>
+                    <td>
+                        <span style="color:#E35656;">Unmarked</span>
+                    </td>
+                  </tr>
+
+                  <!-- <div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div>
+                  <div class="numberCircle"><span>1</span></div> -->
+                  <!-- <h4 style="color:red"><div><center>{{attendanceSummary.marked}}marked {{attendanceSummary.unmarked}}unmarked</center></div></h4> -->
+                </table>
+                  </center>
+
+
+
             </div>
+
         </div>
+
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Fallout
-                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
+                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br></br>
 
-                     <span class="card-action"><a target="new_blank"></a></span></h4>
-<span class="date3">{{ today | date : "MMMM y" }}</span>
+                     <!-- <span class="card-action"><a target="new_blank"><div><span class="fallout">{{attendanceFallout.falloutEmployee}}</span></div> -->
+</a></span></h4>
+<br>
+
+<center>
+<table >
+
+                  <tr>
+                    <td id="fallout">
+                      <span id="spanid">{{attendanceFallout.falloutEmployee}}</span></div>
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td id="fallout1">
+                        <span>out of {{attendanceFallout.totalEmployee}}</span>
+                    </td>
+
+                  </tr>
+
+
+                </table>
+              </center>
+<!-- <h4 style="color:red"><div><center>out of{{attendanceFallout.totalEmployee}}</center></div></h4 -->
+                    <center><span class="date3">{{ today | date : "MMMM y" }}</span></center>
                 </div>
+                <!-- <h4 style="color:red"><div><center>out of{{attendanceFallout.totalEmployee}}</center></div></h4> -->
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Leave Summary
                      <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
-                      <span class="date4">{{ today | date : "MMMM y" }}</span>
+
+                    <center><span class="date4">{{ today | date : "MMMM y" }}</span></center>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <!-- Card Projects -->
+
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card1">
-                 <div class="header">
+                <div class="header">
                     <span class="card-action"><a  ui-sref=".Engineers">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1">Engineers</h4><span>
+                    <h4 class="text1">Engineers</h4><span>
                  </div>
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card1">
                 <div class="header">
                    <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1">Clients</h4><span>
+                    <h4 class="text1">Clients</h4><span>
                  </div>
             </div>
         </div>
+
         <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="card1">
                 <div class="header">
                     <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                        <h4 class="text1">Reports</h4><span>
+                    <h4 class="text1">Reports</h4><span>
                  </div>
             </div>
         </div>
