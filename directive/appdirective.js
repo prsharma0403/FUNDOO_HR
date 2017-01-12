@@ -2,22 +2,22 @@ angular.module("mainApp").directive("calendar", function() {
     return {
         restrict: "E",
         templateUrl: "templates/calendar.html",
-        scope: {
-            selected: "="
-        },
         link: function(scope) {
-            scope.selected = _removeTime(scope.selected || moment());
-            scope.month = scope.selected.clone();
 
-            var start = scope.selected.clone();
-            start.date(1);
-            _removeTime(start.day(0));
+            scope.$watch("attendance",function(oldData,newData){
+              scope.selected = _removeTime(scope.selected || moment());
+              scope.month = scope.selected.clone();
+              var start = scope.selected.clone();
+              start.date(1);
+              _removeTime(start.day(0));
+              _buildMonth(scope, start, scope.month);
+            });
 
-            _buildMonth(scope, start, scope.month);
 
-            scope.select = function(day) {
-                scope.selected = day.date;
-            };
+
+            scope.clickDay=function (date) {
+              console.log(date);
+            }
 
             scope.next = function() {
                 var next = scope.month.clone();
@@ -32,7 +32,38 @@ angular.module("mainApp").directive("calendar", function() {
                 scope.month.month(scope.month.month() - 1);
                 _buildMonth(scope, previous, scope.month);
             };
+
+        },
+        controller:function ($http,$scope,$stateParams,$state) {
+          $scope.day = moment();
+          $scope.bkey=localStorage.getItem('satellizer_token');
+          var date = new Date();
+           date.setDate(date.getDate() - 1);
+           var timeStamp = Date.now();//date.getTime();
+           $scope.clickDay=function (date) {
+             var time = new Date();
+              time.setDate(date.date.dates());
+              time.setMonth(date.date.months());
+              time.setYear(date.date.years());
+              var timeStamp = time.getTime();
+             $state.go("home.unmarkedEmp",{timeStamp});
+           }
+          $http({
+            "url": "http://192.168.0.171:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
+            "method":"GET"
+          }).then(function(data){
+            $scope.attendance={};
+            data.data.attendance.forEach(function(value, key){
+
+              $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
+              // $scope.attendance[value.day]={};
+
+            });
+
+          });
         }
+
+
     };
 
     function _removeTime(date) {
@@ -47,7 +78,7 @@ angular.module("mainApp").directive("calendar", function() {
             count = 0;
         while (!done) {
             scope.weeks.push({
-                days: _buildWeek(date.clone(), month)
+                days: _buildWeek(date.clone(), month,scope)
             });
             date.add(1, "w");
             done = count++ > 2 && monthIndex !== date.month();
@@ -55,19 +86,25 @@ angular.module("mainApp").directive("calendar", function() {
         }
     }
 
-    function _buildWeek(date, month) {
+    function _buildWeek(date, month,scope) {
         var days = [];
         for (var i = 0; i < 7; i++) {
+
+          // console.log(scope.attendance[date.date()].unmarked,date.date());
             days.push({
                 name: date.format("dd").substring(0, 1),
                 number: date.date(),
                 isCurrentMonth: date.month() === month.month(),
                 isToday: date.isSame(new Date(), "day"),
-                date: date
+                date: date,
+                unmarked:scope.attendance[date.date()].unmarked,
+                totalEmployee:scope.attendance[date.date()].totalEmployee
+
             });
             date = date.clone();
             date.add(1, "d");
         }
         return days;
     }
+
 });

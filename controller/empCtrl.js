@@ -14,15 +14,10 @@ function empCtrl($scope, $http) {
     console.log("token ::", $scope.key1);
     $scope.today = new Date();
 
-
     var date = new Date();
-
-
 
     date.setDate(date.getDate() - 1);
     var timeStamp = date.getTime();
-
-    date
 
     $http({
             "url": "http://192.168.0.171:3000/readFalloutAttendanceEmployee?token=" + $scope.key1 + "&timeStamp=" + timeStamp,
@@ -135,7 +130,7 @@ angular.module('mainApp')
 
 
       template:  '<a href=""><div class="item" style="height:auto;"></img><div class="item-int"><h3>{{item.employeeName}}</h3>\
-                       <div class="data"><img src="images/pppp profilepic.jpg"/>\
+                       <div class="data"><img src="images/1024x1024.jpg"/>\
                        <span class="left">{{item.employeeStatus}}</span>\
                        <span class="left">{{item.company}}</span>\
                        <span class="left">{{item.mobile}}</span>\

@@ -2,7 +2,8 @@ angular.module('mainApp').controller('HomeCtrl', function($scope, $location, $st
     $scope.isAuth = function() {
         return $auth.isAuthenticated();
     };
-    $scope.today = new Date();
+    
+    $scope.today=new Date();
     $scope.name = "Prashant ";
     $state.go('home.DashBoard')
     $scope.isActive = function(destination) {

@@ -136,7 +136,6 @@ body {
         display: table-cell;
     }
 }
-/*navbar navigation*/
 nav {
     background-color: #D8D1C7 !important;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 50%) !important;
@@ -157,7 +156,7 @@ nav {
     font-weight: bold;
     letter-spacing: 0px;
     padding: 30px;
-    margin-left: -80px;
+    margin-left: -30px;
     margin-top: -25px;
 }
 
@@ -255,6 +254,7 @@ nav {
     opacity: 100%;
     background-color: #FFFFFF;
     border: solid 2px #9CCDE3;
+    margin-top: 20px;
 }
 .card1:hover {
     box-shadow: 1px 1px 5px 1px gray;
@@ -318,8 +318,8 @@ nav {
     height: 21px;
     opacity: 100;
     text-align:center;
-    color: #6FB8D9;
-    font-family: LucidaGrande-Bold;
+    color: #6fb8d9;
+    font-family:LucidaGrande-Bold;
     line-height: 300px;
     font-size: 24px;
     letter-spacing: 0px;
@@ -340,7 +340,7 @@ nav {
     height: 18px;
     opacity: 100;
     text-align: left;
-    color: #6FB8D9;
+     color: #6FB8D9;
     font-family: LucidaGrande-Bold;
     line-height: 300px;
     font-size: 24px;
@@ -350,7 +350,10 @@ nav {
     width: auto;
     height: auto;
 }
-
+.item1 {
+    width: auto;
+    height: auto;
+}
 
 .modal.in .modal-dialog {
     width: 418px;
@@ -429,6 +432,8 @@ nav {
 }
 
 
+
+
 .mail1 {
     width: 30px;
     height: 30px;
@@ -441,8 +446,21 @@ nav {
     margin-left: 90%;
     margin-top: -1%;
 }
+.mail2 {
+    width: 30px;
+    height: 30px;
+    text-align: right;
+    color: #3B5372;
+    font-family: material;
+    line-height: 0px;
+    font-size: 36px;
+    letter-spacing: 0px;
+    margin-left: 90%;
+    margin-top: -3%;
+}
 
-.unmarked {
+
+.Fallout {
     width: 85px;
     height: 22px;
     opacity: 100;
@@ -456,23 +474,33 @@ nav {
 
 .rectangle {
 
-  width:60px;
+width:60px;
 height: 45px;
 border-radius:25px;
 opacity: 100;
 background-color: #E35656;
-    margin-left: 43%;
-    text-align: center;
+margin-left: 43%;
+  text-align: center;
+    font-size: 24px;
+}
+.rectangle1 {
+
+width:60px;
+height: 45px;
+border-radius:25px;
+opacity: 100;
+background-color: #E35656;
+margin-left:30%;
+  text-align: center;
     font-size: 24px;
 }
 
 
-
 #main{
   cursor: default;
-   margin-top: 5%;
-   margin-left: 5%;
-   margin-right: 2%;
+   /*margin-top: 5%;*/
+   margin-left:3%;
+   margin-right: 5%;
 }
 #main:hover {
      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 50%);
@@ -501,7 +529,7 @@ background-color: #E35656;
     box-shadow: .5px .5px .5px 1px grey;
      display: inline-block;
      margin: 0 8px 15px;
-     width: 325px;
+     width: 323px;
      height: 112px;
      background-color: rgba(240, 237, 234, 1);
      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 50%);
@@ -522,7 +550,7 @@ background-color: #E35656;
    color: #3B5372;
    font-family: LucidaGrande-Bold;
    line-height: 0px;
-   font-size: 17px;
+   font-size: 14px;
    letter-spacing: 0px;
    font-weight: bold;
    margin-left: 40%;
@@ -574,7 +602,7 @@ background-color: #E35656;
 #main .item:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-.unmarked {
+.FalloutAttendence {
     width: 85px;
     height: 22px;
     opacity: 100;
@@ -659,4 +687,15 @@ h2{
 }
 #spanid{
   margin-top: 500px;
+}
+.unmarkedEmp{
+  width: 85px;
+  height: 22px;
+  opacity: 100;
+  text-align: left;
+  color: #E35656;
+  font-family: AppleGothic;
+  line-height: 0px;
+  font-size: 18px;
+  letter-spacing: 0px;
 }

@@ -60,7 +60,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
         })
         .state('home.Attendence', {
             url: 'calender',
-            templateUrl: 'templates/calender.html',
+            template: '<calendar></calendar>',
             controller: null,
             resolve: {
                 loginRequired: loginRequired
@@ -68,5 +68,14 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
         })
 
 
+.state('home.unmarkedEmp',{
+url:'unmarkedEmp/:timeStamp',
+templateUrl:'templates/unmarkedEmp.html',
+controller:'unmarkedEmp'
+// resolve: {
+//     loginRequired: loginRequired
+// }
+
+})
 
 });

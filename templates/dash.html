@@ -10,7 +10,7 @@
                     <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
                     <span class="card-action"><a target="new_blank"></a></span></h4>
 
-                    <div><center><span class="date2">{{ today | date : "dd, MMMM y" }}</span></center></div>
+                    <div><center><span class="date2">{{ yesterday | date : "dd, MMMM y" }}</span></center></div>
                 </div>
                 <center>
                 <table>
@@ -44,7 +44,7 @@
 
         </div>
 
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Fallout
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Leave Summary
@@ -90,11 +90,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
+
+    <!-- <div class="row"> -->
         <!-- Card Projects -->
 
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <span class="card-action"><a  ui-sref=".Engineers">
@@ -104,7 +104,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                    <span class="card-action"><a target="new_blank">
@@ -114,7 +114,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <span class="card-action"><a target="new_blank">
@@ -124,5 +124,5 @@
             </div>
         </div>
     </div>
-</div>
+
 <div ui-view></div>
