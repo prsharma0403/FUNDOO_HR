@@ -15,10 +15,6 @@ angular.module("mainApp").directive("calendar", function() {
 
 
 
-            scope.clickDay=function (date) {
-              console.log(date);
-            }
-
             scope.next = function() {
                 var next = scope.month.clone();
                 _removeTime(next.month(next.month() + 1).date(1));

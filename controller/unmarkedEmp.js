@@ -1,6 +1,5 @@
 angular.module('mainApp').controller('unmarkedEmp', function ($scope, $location, $stateParams, $state, $auth,$http) {
 
-console.log($stateParams.timeStamp);
 $http({url:"http://192.168.0.171:3000/readUnmarkedAttendanceEmployee?token=jkanahdjsa&timeStamp="+$stateParams.timeStamp,
       method:"GET"}).then(function (data) {
         console.log(data);

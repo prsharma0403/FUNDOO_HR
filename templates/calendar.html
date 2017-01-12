@@ -6,11 +6,11 @@
 
 <div class="calendar">
     <div class="week" ng-repeat="week in weeks">
-        <span class="day"  ng-repeat="day in week.days" ng-click="clickDay(day)"></span>
-
-      </span><span>{{day.number}}</span><br>
+        <span class="day"  ng-repeat="day in week.days" ng-click="clickDay(day)">
+      <span>{{day.number}} <br/>
           <label  style="color:green">{{day.unmarked}}/{{day.totalEmployee}}</label>
         </span>
+      </span>
 
 </div>
 </div>
