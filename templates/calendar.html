@@ -1,5 +1,5 @@
 <div class="header">
-    <i class="fa fa-angle-left" ng-click="previous()"></i>
+    <i class="fa fa-angle-left" ng-click="previous()"><b></i>
     <span>{{month.format("MMMM, YYYY")}}</span>
     <i class="fa fa-angle-right" ng-click="next()"></i>
 </div>
@@ -8,7 +8,7 @@
     <div class="week" ng-repeat="week in weeks">
         <span class="day"  ng-repeat="day in week.days" ng-click="clickDay(day)">
       <span>{{day.number}} <br/>
-          <label  style="color:green">{{day.unmarked}}/{{day.totalEmployee}}</label>
+          <label  style="color: #E35656">{{day.unmarked}}/{{day.totalEmployee}}</label>
         </span>
       </span>
 

@@ -8,9 +8,11 @@ localStorage.setItem('tom', 'prashant');
 
 
 /* Controllers */
+
 function empCtrl($scope, $http) {
     $scope.key1 = localStorage.getItem('satellizer_token');
     console.log("fallout");
+     $scope.dataLoading = true;
     console.log("token ::", $scope.key1);
     $scope.today = new Date();
 
@@ -28,6 +30,7 @@ function empCtrl($scope, $http) {
             $scope.fall = data.data.falloutNumber;
             $scope.totalEmployee = data.data.totalEmployee;
             console.log("fall");
+             $scope.dataLoading = false;
         }).catch(function(err) {
             console.log(err);
         })

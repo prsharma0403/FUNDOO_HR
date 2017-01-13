@@ -9,17 +9,17 @@
                         <form name="Form" method="post" ng-submit="login()">
                             <md-input-container class="md-block" id="input1">
                                 <label>Email</label>
-                                <input type="text" name="email" ng-model="user.emailId" ng-pattern="re" required="" />
+                                <input type="text" name="email" ng-model="user.emailId" ng-pattern="re" required md-no-asterisk />
 
                             </md-input-container>
                             <md-input-container class="md-block" id="input2">
                                 <label>Password</label>
-                                <input type="password" name="password" ng-model="user.password" ng-pattern="ps" required="" />
-
-
-
+                                <input type="password" name="password" ng-model="user.password" ng-pattern="ps" required md-no-asterisk />
                             </md-input-container>
-                            <button ng-disabled="!Form.$valid" type="submit" class="md-raised"> Login </button>
+                            <button ng-disabled="!Form.$valid ||dataLoading" type="submit" class="md-raised"> Login </button>
+                            <span class="loader">
+                             <img ng-if="dataLoading" src="images/loader.gif" width="25px" height="25px" />
+                             </span>
                             <span ng-show="Form.email.$error.pattern" style="color:red;"><center>Invalid Email id.</center></span>
                             <span ng-show="Form.password.$error.pattern" style="color:red;"><center>Invalid Password</center></span>
                             <!--<div>Login</div>-->
