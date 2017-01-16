@@ -58,7 +58,7 @@ span {
     float:left;
     display: block;
     background: white;
-
+    font-family: Applegothic;
     border: solid 2px @border-colour;
     margin-bottom: 40px;
     border-radius: 8px;
@@ -66,7 +66,7 @@ span {
     border-color: #6fb8d9;
 
     @spacing: 5px;
-    @icon-width: 40px;
+    @icon-width: 20px;
 
     div.week {
         float: left;
@@ -77,12 +77,13 @@ span {
             width: 100%/7;
             .border-box;
             border-left: solid 1px @border-colour;
-            font-size: 24px;
+            font-size: 17px;
+         font-family: serif;
             text-align: center;
             .vertical-centre(70px);
             background: white;
             cursor: pointer;
-          
+
             &.different-month {
                 color: white;
             }

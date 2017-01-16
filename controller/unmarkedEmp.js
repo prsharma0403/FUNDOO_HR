@@ -3,6 +3,7 @@ angular.module('mainApp').controller('unmarkedEmp', function ($scope, $location,
 $http({url:"http://192.168.0.171:3000/readUnmarkedAttendanceEmployee?token=jkanahdjsa&timeStamp="+$stateParams.timeStamp,
       method:"GET"}).then(function (data) {
         console.log(data);
+
         $scope.totalEmployee=data.data.totalEmployee;
         $scope.unmarkedNumber=data.data.unmarkedNumber;
         $scope.display ="umarkedEmployee";
@@ -12,6 +13,11 @@ $http({url:"http://192.168.0.171:3000/readUnmarkedAttendanceEmployee?token=jkana
       }).catch(function () {
 
       });
+
+      var date = new Date();
+       date.setDate(date.getDate() - 1);
+       $scope.yesterday=date;
+
       $scope.cardItems = [];
 
       $scope.employees = function(employeeName, employeeStatus, company, mobile, emailId) {
@@ -53,6 +59,7 @@ $http({url:"http://192.168.0.171:3000/readUnmarkedAttendanceEmployee?token=jkana
                          <span class="left">{{item.company}}</span>\
                          <span class="left">{{item.mobile}}</span>\
                          <span class="left">{{item.emailId}}</span></div></div></div></a>'
+
              };
 
   });

@@ -17,6 +17,7 @@ angular.module('mainApp').controller('DashCtrl', function ($scope, $location, $s
              $scope.attendanceFallout= data.data.attendanceFallout;
              console.log($scope.attendanceFallout);
              $scope.attendanceSummary = data.data.attendanceSummary;
+             $scope.leaveSummary=data.data.leaveSummary;
 
             //  console.log(data.data.attendanceSummary);
 

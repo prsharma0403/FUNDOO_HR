@@ -1,15 +1,17 @@
 
   <div class="row">
     <div class="col-lg-4">
-      <a ui-sref="home.DashBoard">
+      <a ui-sref="home.Attendence">
           <span><img class="back " src="images/previous.png "/></img></span>
       </a>
     </div>
     <div class="col-lg-4">
-      <span class="rectangle1" style="color: #ffffff;">{{unmarkedNumber}}/{{totalEmployee}}</span>
-      <span class="unmarkedEmp">Unmarked Employee</span>
-    </div>
-    <div class="col-lg-4">
+      <span class="date1"><center><b>{{ yesterday | date : "dd, MMMM y" }}</center></span>
+      <span class="rectangle2" style="color: #ffffff;">{{unmarkedNumber}}/{{totalEmployee}}</span>
+      <span class="unmarkedEmp">Unmarked</span>
+        </div>
+
+    <!-- <div class="col-lg-4"> -->
       <span><img type="button" class="mail2" src="images/email.png"/ data-toggle="modal" data-target="#myModal"></img></span>
       <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog modal-sm">
@@ -32,7 +34,8 @@
               </div>
           </div>
   </div>
-    </div>
+
+    <!-- </div> -->
 
 
 
