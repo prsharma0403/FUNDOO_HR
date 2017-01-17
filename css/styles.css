@@ -145,7 +145,6 @@ nav {
 
 }
 
-
 .nav-brand {
     opacity: 100;
     text-align: left;
@@ -156,7 +155,7 @@ nav {
     font-weight: bold;
     letter-spacing: 0px;
     padding: 30px;
-    margin-left: -25px;
+    margin-left: 5px;
     margin-top: -25px;
 }
 .navbar-default .navbar-nav>li>a {
@@ -168,7 +167,8 @@ nav {
 
     border-bottom: 4px solid rgba(59, 83, 114, 1);
     border-top:none;
-    width:140px;
+
+    /*width:140px;*/
 
 
 }
@@ -258,6 +258,43 @@ nav {
         margin: 3% auto auto 10%;
     }
 }
+@media (max-width:360px) {
+.navbar-nav{
+
+    margin-left: 20px !important;
+}
+.nav{
+  padding-right:10px!important;
+  }
+#block{
+  width: 100% !important;
+      height: 60px;
+  }
+  .nav-brand{
+    opacity: 100;
+text-align: left;
+color: #3B5372;
+font-family: Ionicons;
+line-height: 0px;
+font-size: 24px;
+font-weight: bold;
+letter-spacing: 0px;
+padding: 30px;
+margin-left: -25px;
+margin-top: -25px;
+
+  }
+  .date{
+  margin-left:-40px;
+  }
+  .mail1{
+        margin-top: -14% !important;
+  }
+  .mail2{
+    margin-top: -18% !important;
+  }
+}
+
 .card1 {
     border: 2px solid rgba(156, 205, 227, 0.99);
     height: 222px;
@@ -524,7 +561,7 @@ background-color: #E35656;
 #main{
   cursor: default;
    /*margin-top: 5%;*/
-   margin-left:3%;
+   /*margin-left:3%;*/
    margin-right: 5%;
 }
 #main:hover {
@@ -580,7 +617,7 @@ background-color: #E35656;
    font-weight: bold;
    margin-left: 40%;
    margin-bottom: -3%;
-   
+
 }
 
 .item-int img {
@@ -704,7 +741,7 @@ h2{
   align:center;
 }*/
 #fallout{
-  font-size: 64px;
+  font-size: 50px;
   color: #E35656;
 }
 #fallout1{

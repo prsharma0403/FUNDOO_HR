@@ -7,6 +7,7 @@ angular.module("mainApp").directive("calendar", function() {
             scope.$watch("attendance",function(oldData,newData){
               scope.selected = _removeTime(scope.selected || moment());
               scope.month = scope.selected.clone();
+              console.log("we are watching");
               var start = scope.selected.clone();
               start.date(1);
               _removeTime(start.day(0));
@@ -16,19 +17,29 @@ angular.module("mainApp").directive("calendar", function() {
 
 
             scope.next = function() {
+              console.log("next..");
                 var next = scope.month.clone();
                 _removeTime(next.month(next.month() + 1).date(1));
                 scope.month.month(scope.month.month() + 1);
+                // console.log(scope.month.unix());
+               var timeStamp1=(scope.month.unix());
+               console.log(timeStamp1);
                 _buildMonth(scope, next, scope.month);
-            };
+                scope.readUnmark(timeStamp1);
 
+            };
             scope.previous = function() {
                 var previous = scope.month.clone();
                 _removeTime(previous.month(previous.month() - 1).date(1));
                 scope.month.month(scope.month.month() - 1);
-                _buildMonth(scope, previous, scope.month);
-            };
+                var timeStamp2=(scope.month.unix())
+                console.log(timeStamp2);
 
+                _buildMonth(scope, previous, scope.month);
+                scope.readUnmark(timeStamp2);
+
+
+          };
         },
         controller:function ($http,$scope,$stateParams,$state) {
           $scope.day = moment();
@@ -57,6 +68,21 @@ angular.module("mainApp").directive("calendar", function() {
             });
 
           });
+          $scope.readUnmark=function (timeStamp) {
+            $http({
+              "url": "http://192.168.0.171:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
+              "method":"GET"
+            }).then(function(data){
+              $scope.attendance={};
+              data.data.attendance.forEach(function(value, key){
+
+                $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
+                // $scope.attendance[value.day]={};
+
+              });
+
+        });
+          };
         }
 
 
