@@ -9,30 +9,50 @@ localStorage.setItem('tom', 'prashant');
 
 /* Controllers */
 
-function empCtrl($scope, $http) {
-    $scope.key1 = localStorage.getItem('satellizer_token');
-    console.log("fallout");
+function empCtrl($scope, $http,$stateParams,restService) {
+    var token = localStorage.getItem('satellizer_token');
+    console.log(token);
      $scope.dataLoading = true;
-    console.log("token ::", $scope.key1);
-    $scope.today = new Date();
+     $scope.today = new Date();
 
-    var date = new Date();
+     var date = new Date();
+     date.setDate(date.getDate() - 1);
+     $scope.yesterday = date;
+     var timeStamp = date.getTime();
+    //  var timeStamp=$stateParams.timeStamp;
 
-    date.setDate(date.getDate() - 1);
-    var timeStamp = date.getTime();
+    console.log(timeStamp);
+    var query={
+      token: localStorage.getItem("satellizer_token"),
+      timeStamp: timeStamp
+  };
+  console.log(query);
+  var promise = restService.getRequest('readFalloutAttendanceEmployee', query);
+   promise.then(function(data) {
+      //  console.log(data);
 
-    $http({
-            "url": "http://192.168.0.171:3000/readFalloutAttendanceEmployee?token=" + $scope.key1 + "&timeStamp=" + timeStamp,
-            "method": "GET"
-        }).then(function(data) {
+
+
+    //
+    // $scope.today = new Date();
+    //
+    // var date = new Date();
+    //
+    // date.setDate(date.getDate() - 1);
+    // var timeStamp = date.getTime();
+    //
+    // $http({
+    //         "url": "http://192.168.0.144:3000/readFalloutAttendanceEmployee?token=" + $scope.key1 + "&timeStamp=" + timeStamp,
+    //         "method": "GET"
+    //     }).then(function(data) {
             console.log(data.data);
             $scope.items = data.data.falloutEmployee;
             $scope.fall = data.data.falloutNumber;
             $scope.totalEmployee = data.data.totalEmployee;
             console.log("fall");
              $scope.dataLoading = false;
-        }).catch(function(err) {
-            console.log(err);
+        }).catch(function (error) {
+          console.log(error);
         })
         // $scope.items = [{
         //         employeeName:'Naresh shanghvi',

@@ -41,7 +41,7 @@ angular.module("mainApp").directive("calendar", function() {
 
           };
         },
-        controller:function ($http,$scope,$stateParams,$state) {
+        controller:function ($http,$scope,$stateParams,$state,restService) {
           $scope.day = moment();
           $scope.bkey=localStorage.getItem('satellizer_token');
           var date = new Date();
@@ -55,33 +55,40 @@ angular.module("mainApp").directive("calendar", function() {
               var timeStamp = time.getTime();
              $state.go("home.unmarkedEmp",{timeStamp});
            }
-          $http({
-            "url": "http://192.168.0.171:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
-            "method":"GET"
-          }).then(function(data){
-            $scope.attendance={};
-            data.data.attendance.forEach(function(value, key){
+           var query ={token:"ddfksdn",timeStamp};
+           restService.getRequest('readMonthlyAttendanceSummary', query).then(function (data) {
+             console.log(data);
+             $scope.attendance={};
+             data.data.attendance.forEach(function(value, key){
 
-              $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-              // $scope.attendance[value.day]={};
+               $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
+               // $scope.attendance[value.day]={};
 
-            });
+             });
 
-          });
+           }).catch(function (error) {
+             console.log(error);
+           })
+          // $http({
+          //   "url": "http://192.168.0.144:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
+          //   "method":"GET"
+          // }).then(function(data){
+          //
+          // });
           $scope.readUnmark=function (timeStamp) {
-            $http({
-              "url": "http://192.168.0.171:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
-              "method":"GET"
-            }).then(function(data){
-              $scope.attendance={};
-              data.data.attendance.forEach(function(value, key){
-
-                $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-                // $scope.attendance[value.day]={};
-
-              });
-
-        });
+        //     $http({
+        //       "url": "http://192.168.0.144:3000/readMonthlyAttendanceSummary?token="+$scope.bkey+"&timeStamp="+timeStamp,
+        //       "method":"GET"
+        //     }).then(function(data){
+        //       $scope.attendance={};
+        //       data.data.attendance.forEach(function(value, key){
+        //
+        //         $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
+        //         // $scope.attendance[value.day]={};
+        //
+        //       });
+        //
+        // });
           };
         }
 
