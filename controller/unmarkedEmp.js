@@ -1,22 +1,8 @@
 angular.module('mainApp').controller('unmarkedEmp', function($scope, $location, $stateParams, $state, $auth, $http, localStorageService, restService) {
 
-    // $http({
-    //     url: "http://192.168.0.144:3000/readUnmarkedAttendanceEmployee?token=jkanahdjsa&timeStamp=" + $stateParams.timeStamp,
-    //     method: "GET"
-    // }).then(function(data) {
-    //     console.log(data);
-    //
-    //     $scope.totalEmployee = data.data.totalEmployee;
-    //     $scope.unmarkedNumber = data.data.unmarkedNumber;
-    //     $scope.display = "umarkedEmployee";
-    //     $scope.items = data.data.umarkedEmployee;
-    //     console.log($scope.items);
-    //     $scope.display = "umarkedEmployee";
-    // }).catch(function() {
-    //
-    // });
+
     var token = localStorageService.get('token');
-    console.log(token);
+    // console.log(token);
     $scope.today = new Date();
     var timeStamp = $stateParams.timeStamp;
     console.log(timeStamp);

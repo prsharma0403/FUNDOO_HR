@@ -22,11 +22,7 @@ angular.module('mainApp').controller('DashCtrl', function($scope, $location, $st
     var promise = restService.getRequest('readDashboardData', query);
   promise.then(function(data) {
       console.log(data.data);
-    // $http({
-    //     "url": "http://192.168.0.144:3000/readDashboardData?token=" + $scope.akey + "&timeStamp=" + timeStamp,
-    //     "method": "GET"
-    // }).then(function(data) {
-    //     console.log(data.data);
+
         $scope.attendanceFallout = data.data.attendanceFallout;
         console.log($scope.attendanceFallout);
         $scope.attendanceSummary = data.data.attendanceSummary;
