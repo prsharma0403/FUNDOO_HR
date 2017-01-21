@@ -20,18 +20,16 @@
                             <span class="loader">
                              <img ng-if="dataLoading" src="images/loader.gif" width="25px" height="25px" />
                              </span>
-                            <span ng-show="Form.email.$error.pattern" style="color:red;"><center>Invalid Email id.</center></span>
-                            <span ng-show="Form.password.$error.pattern" style="color:red;"><center>Invalid Password</center></span>
-                            <!--<div>Login</div>-->
+                            <span ng-show="Form.email.$error.pattern" style="color:red;"><center><h6><b>Invalid Email id.</h6></center></span>
+                            <span ng-show="Form.password.$error.pattern" style="color:red;"><center><h6><b>Invalid Password</h6></center></span>
+                  
 
                         </form>
                     </div>
 
-                    <!-- ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/" -->
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!--class="md-raised md-primary"-->

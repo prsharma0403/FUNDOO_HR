@@ -10,7 +10,7 @@
                     <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
                     <span class="card-action"><a target="new_blank"></a></span></h4>
 
-                    <div><center><span class="date2">{{ yesterday | date : "dd, MMMM y" }}</span></center></div>
+                    <div><center><span class="date2">{{ yesterday | date : "dd MMMM y" }}</span></center></div>
                 </div>
                 <center>
                 <table>
@@ -32,9 +32,7 @@
                     </td>
                   </tr>
 
-                  <!-- <div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div>
-                  <div class="numberCircle"><span>1</span></div> -->
-                  <!-- <h4 style="color:red"><div><center>{{attendanceSummary.marked}}marked {{attendanceSummary.unmarked}}unmarked</center></div></h4> -->
+
                 </table>
                   </center>
 
@@ -49,8 +47,6 @@
                 <div class="header">
                     <h4 class="text">Attendance Fallout
                       <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br></br>
-
-                     <!-- <span class="card-action"><a target="new_blank"><div><span class="fallout">{{attendanceFallout.falloutEmployee}}</span></div> -->
 </a></span></h4>
 <br>
 
@@ -73,10 +69,8 @@
 
                 </table>
               </center>
-<!-- <h4 style="color:red"><div><center>out of{{attendanceFallout.totalEmployee}}</center></div></h4 -->
                     <center><span class="date3">{{ today | date : "MMMM y" }}</span></center>
                 </div>
-                <!-- <h4 style="color:red"><div><center>out of{{attendanceFallout.totalEmployee}}</center></div></h4> -->
             </div>
         </div>
 
@@ -115,7 +109,7 @@
             </div>
         </div>
 
-    <!-- <div class="row"> -->
+
         <!-- Card Projects -->
 
         <div class="col-md-6 col-lg-4  col-xs-12">

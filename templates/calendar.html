@@ -8,7 +8,7 @@
 
 
     <div class="week" ng-repeat="week in weeks">
-        <span class="day"  ng-repeat="day in week.days" ng-click="clickDay(day)">
+        <span class="day"  ng-repeat="day in week.days" ng-click="clickDay(day.date)">
       <span>{{day.number}} <br/>
 
           <label  ng-style="{color:(day.unmarked==='-'?'#18880d':'#E35656')}">{{day.unmarked}}/{{day.totalEmployee}}</label>

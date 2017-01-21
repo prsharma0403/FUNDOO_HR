@@ -11,7 +11,7 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
 
     var config = {
         method: 'POST',
-        url: 'http://192.168.0.144:3000/login'
+        url: 'http://192.168.0.133:3000/login'
     };
     $scope.login = function() {
       $scope.dataLoading = true;

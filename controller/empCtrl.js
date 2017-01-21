@@ -19,7 +19,6 @@ function empCtrl($scope, $http,$stateParams,restService) {
      date.setDate(date.getDate() - 1);
      $scope.yesterday = date;
      var timeStamp = date.getTime();
-    //  var timeStamp=$stateParams.timeStamp;
 
     console.log(timeStamp);
     var query={
@@ -33,18 +32,6 @@ function empCtrl($scope, $http,$stateParams,restService) {
 
 
 
-    //
-    // $scope.today = new Date();
-    //
-    // var date = new Date();
-    //
-    // date.setDate(date.getDate() - 1);
-    // var timeStamp = date.getTime();
-    //
-    // $http({
-    //         "url": "http://192.168.0.144:3000/readFalloutAttendanceEmployee?token=" + $scope.key1 + "&timeStamp=" + timeStamp,
-    //         "method": "GET"
-    //     }).then(function(data) {
             console.log(data.data);
             $scope.items = data.data.falloutEmployee;
             $scope.fall = data.data.falloutNumber;
@@ -54,66 +41,7 @@ function empCtrl($scope, $http,$stateParams,restService) {
         }).catch(function (error) {
           console.log(error);
         })
-        // $scope.items = [{
-        //         employeeName:'Naresh shanghvi',
-        //         employeeStatus: 'Internship',1483771787396
-        //         company: 'BridgeLabz',
-        //         mobile:'1234567890',
-        //         emailId :'artichabra@bridgelabz.com',
-        //         src: 'images/pppp profilepic.jpg'
-        //       },
-        //       {
-        //           employeeName:'Sohail taanveer',  // <div><span class="rectangle">2/100</span>&nbsp&nbsp<span class="unmarked">Unmarked</span></div>
-        //           employeeStatus: 'Fellowship',
-        //           company: 'BridgeLabz',
-        //           mobile:'1234567890',
-        //           emailId :'arti2793@bridgelabz.com',
-        //           src: 'images/431.png'
-        //         },{
-        //             employeeName:'Amit arunthee',
-        //             employeeStatus: 'Fellowship',
-        //             company: 'BridgeLabz',
-        //             mobile:'1234567890',
-        //             emailId :'sushantsingh@bridgelabz.com',
-        //             src: 'images/virat_kohli.png'
-        //           },  {
-        //                 employeeName:'Durga Mahtab',
-        //                 employeeStatus: 'Fellowship',
-        //                 company: 'BridgeLabz',
-        //                 mobile:'1234567890',
-        //                 emailId :'pp@bridgelabz.com',
-        //                 src: 'images/ab_de_villiers.png'
-        //               },{
-        //                   employeeName:'Hamid Raza Noori',
-        //                   employeeStatus: 'Fellowship',
-        //                   company: 'BridgeLabz',
-        //                   mobile:'1234567890',
-        //                   emailId :'pp@bridgelabz.com',
-        //                   src: 'images/IMG_20160217_125454.jpg'
-        //                 },{
-        //                       employeeName:'Shalini Reddy',
-        //                       employeeStatus: 'Internship',
-        //                       company: 'BridgeLabz',
-        //                       mobile:'1234567890',
-        //                       emailId :'pp@bridgelabz.com',
-        //                       src: 'images/Screenshot from 2016-10-22 09:30:27.png'
-        //                     },
-        //                     {
-        //                         employeeName:'Sharad bhai pawar',
-        //                         employeeStatus: 'Fellowship',
-        //                         company: 'BridgeLabz',
-        //                         mobile:'1234567890',
-        //                         emailId :'pp@bridgelabz.com',
-        //                         src: 'images/pppp profilepic.jpg'
-        //                       },{
-        //                           employeeName:'Swati Dindule',
-        //                           employeeStatus: 'Fellowship',
-        //                           company: 'BridgeLabz',
-        //                           mobile:'1234567890',
-        //                           emailId :'pp@bridgelabz.com',
-        //                           src: 'images/_20161230_100546.JPG'
-        //                         }];
-
+        
 
 
 

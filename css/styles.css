@@ -136,6 +136,10 @@ body {
         display: table-cell;
     }
 }
+  .row{
+    margin-left: 16px!important;
+  }
+
 nav {
     background-color: #D8D1C7 !important;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 50%) !important;
@@ -365,11 +369,12 @@ margin-top: -25px;
     letter-spacing: 0px;
     margin: 30%;
 }.date2 {
+
     width: 187px;
     height: 21px;
     opacity: 100;
     text-align:center;
-    color: #6fb8d9;
+    color: #6fb8d9!important;
     font-family:LucidaGrande-Bold;
     line-height: 300px;
     font-size: 24px;
@@ -380,7 +385,7 @@ margin-top: -25px;
     height: 18px;
     opacity: 100;
     text-align: center;
-    color: #6FB8D9;
+    color: #6FB8D9!important;
     font-family: Ionicons;
     line-height: 40px;
     font-size: 24px;
@@ -391,7 +396,7 @@ margin-top: -25px;
   height: 18px;
   opacity: 100;
   text-align: center;
-  color: #6FB8D9;
+  color: #6FB8D9!important;
   font-family: Ionicons;
   line-height: 40px;
   font-size: 24px;
@@ -475,6 +480,7 @@ margin-top: -25px;
     height: 30px;
     text-align: left;
     color: #3B5372;
+        margin-left: 30px;
     font-family: material;
     line-height: 0px;
     font-size: 30px;
