@@ -1,3 +1,4 @@
+
 angular.module("mainApp").directive("calendar", function() {
     return {
         restrict: "E",
@@ -48,10 +49,10 @@ angular.module("mainApp").directive("calendar", function() {
             scope.previous = function() {
               scope.called=1;
                 var previous = scope.month.clone();
-
+                // scope.month.month(scope.month.month() - 1);
                 var timeStamp2=(previous.month(previous.month() - 1).unix()*1000);
                 console.log(timeStamp2);
-
+                // _buildMonth(scope, previous, scope.month);
                 scope.readUnmark(timeStamp2);
 
 
@@ -65,6 +66,7 @@ angular.module("mainApp").directive("calendar", function() {
            var timeStamp = Date.now();//date.getTime();
            $scope.clickDay=function (date) {
              var timeStamp = date.unix()*1000;
+             console.log(timeStamp);
              $state.go("home.unmarkedEmp",{timeStamp});
            }
            var query ={token:"ddfksdn",timeStamp};
@@ -74,7 +76,7 @@ angular.module("mainApp").directive("calendar", function() {
              data.data.attendance.forEach(function(value, key){
 
                $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-
+               // $scope.attendance[value.day]={};
 
              });
 
@@ -88,7 +90,7 @@ angular.module("mainApp").directive("calendar", function() {
               $scope.attendance={};
               data.data.attendance.forEach(function(value, key){
                 $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-
+                // $scope.attendance[value.day]={};
               });
 
             }).catch(function (error) {
@@ -124,7 +126,7 @@ angular.module("mainApp").directive("calendar", function() {
         var days = [];
         for (var i = 0; i < 7; i++) {
 
-        
+          // console.log(scope.attendance[date.date()].unmarked,date.date());
             days.push({
                 name: date.format("dd").substring(0, 1),
                 number: date.date(),

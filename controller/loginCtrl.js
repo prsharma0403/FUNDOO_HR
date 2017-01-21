@@ -11,7 +11,7 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
 
     var config = {
         method: 'POST',
-        url: 'http://192.168.0.133:3000/login'
+        url: 'http://192.168.0.9:3000/login'
     };
     $scope.login = function() {
       $scope.dataLoading = true;
@@ -19,7 +19,7 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
             .then(function(data) {
                 // console.log("You have successfully signed in!");
                 console.log("ok ", data);
-                $state.go('home');
+                // $state.go('home');
                 // $location.path('/');
             })
             .catch(function(error) {
