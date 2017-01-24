@@ -2,9 +2,9 @@
 
 
 angular.module('mainApp').controller('DashCtrl', function($scope, $location, $stateParams, $state, $auth, $http, localStorageService, restService) {
-  
+
       var token=localStorageService.get('token');
-      console.log(token);
+      // console.log(token);
       $scope.today=new Date();
 
 
@@ -19,10 +19,10 @@ angular.module('mainApp').controller('DashCtrl', function($scope, $location, $st
     };
     var promise = restService.getRequest('readDashboardData', query);
   promise.then(function(data) {
-      console.log(data.data);
+      // console.log(data.data);
 
         $scope.attendanceFallout = data.data.attendanceFallout;
-        console.log($scope.attendanceFallout);
+        // console.log($scope.attendanceFallout);
         $scope.attendanceSummary = data.data.attendanceSummary;
         $scope.leaveSummary = data.data.leaveSummary;
 

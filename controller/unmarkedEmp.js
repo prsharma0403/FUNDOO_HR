@@ -1,11 +1,11 @@
-angular.module('mainApp').controller('unmarkedEmp', function($scope, $location, $stateParams, $state, $auth, $http, localStorageService, restService) {
+angular.module('mainApp').controller('unmarkedEmp', function($scope,$rootScope, $location, $stateParams, $state, $auth, $http, localStorageService, restService,$filter) {
 
 
     var token = localStorageService.get('token');
     // console.log(token);
     $scope.today = new Date();
     var timeStamp = $stateParams.timeStamp;
-    console.log(timeStamp);
+console.log($rootScope.viewDay);
     var query = {
         token: "1a285sdffd8do8fd",
         timeStamp: timeStamp
@@ -13,18 +13,18 @@ angular.module('mainApp').controller('unmarkedEmp', function($scope, $location, 
 
     var promise = restService.getRequest('readUnmarkedAttendanceEmployee', query);
     promise.then(function(data) {
-        console.log(data);
+        // console.log(data);
 
         $scope.totalEmployee = data.data.totalEmployee;
         $scope.unmarkedNumber = data.data.unmarkedNumber;
         $scope.display = "umarkedEmployee";
         $scope.items = data.data.umarkedEmployee;
-        console.log($scope.items);
+        // console.log($scope.items);
         $scope.display = "umarkedEmployee";
     });
-    var date = new Date();
-    date.setDate(date.getDate() - 1);
-    $scope.yesterday = date;
+    // var date = new Date();
+    // date.setDate(date.getDate() - 1);
+    // $scope.yesterday = date;
 
     $scope.cardItems = [];
 
@@ -63,11 +63,11 @@ angular.module('mainApp')
 
 
             template: '<a href=""><div class="item" style="height:auto;"></img><div class="item-int"><h3>{{item.employeeName}}</h3>\
-                         <div class="data"><img src="images/1024x1024.jpg"/>\
-                         <span class="left">{{item.employeeStatus}}</span>\
-                         <span class="left">{{item.company}}</span>\
-                         <span class="left">{{item.mobile}}</span>\
-                         <span class="left">{{item.emailId}}</span></div></div></div></a>'
+                       <div class="data"><img src="images/1024x1024.jpg"/>\
+                       <span class="left">{{item.employeeStatus}}</span>\
+                       <span class="left">{{item.company}}</span>\
+                       <span class="left">{{item.mobile}}</span>\
+                       <span class="left">{{item.emailId}}</span></div></div></div></a>'
 
         };
 

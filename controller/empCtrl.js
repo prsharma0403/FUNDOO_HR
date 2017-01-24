@@ -16,6 +16,7 @@ function empCtrl($scope, $http,$stateParams,restService) {
      $scope.today = new Date();
 
      var date = new Date();
+  
      date.setDate(date.getDate() - 1);
      $scope.yesterday = date;
      var timeStamp = date.getTime();
@@ -41,7 +42,7 @@ function empCtrl($scope, $http,$stateParams,restService) {
         }).catch(function (error) {
           console.log(error);
         })
-        
+
 
 
 

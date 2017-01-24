@@ -1,3 +1,4 @@
+
 angular.module("mainApp").directive("calendar", function() {
     return {
         restrict: "E",
@@ -9,7 +10,7 @@ angular.module("mainApp").directive("calendar", function() {
                 if(scope.called===undefined){
               scope.selected = _removeTime(scope.selected || moment());
               scope.month = scope.selected.clone();
-              console.log("we are watching");
+              // console.log("we are watching");
               var start = scope.selected.clone();
               start.date(1);
               _removeTime(start.day(0));
@@ -18,6 +19,7 @@ angular.module("mainApp").directive("calendar", function() {
             }else if (scope.called===0) {
               console.log("0000000");
               var next = scope.month.clone();
+                  _removeTime(next.month(next.month() + 1).date(1));
               scope.month.month(scope.month.month() + 1);
               _buildMonth(scope, next, scope.month);
             }else if (scope.called===1) {
@@ -33,9 +35,9 @@ angular.module("mainApp").directive("calendar", function() {
             });
 
 
-            scope.select = function(day) {
-                scope.selected = day.date;
-            };
+            // scope.select = function(day) {
+            //     scope.selected = day.date;
+            // };
             scope.next = function() {
               scope.called=0;
                 var next = scope.month.clone();
@@ -51,20 +53,25 @@ angular.module("mainApp").directive("calendar", function() {
 
                 var timeStamp2=(previous.month(previous.month() - 1).unix()*1000);
                 console.log(timeStamp2);
-
+                // _buildMonth(scope, previous, scope.month);
                 scope.readUnmark(timeStamp2);
 
 
           };
         },
-        controller:function ($http,$scope,$stateParams,$state,restService) {
+        controller:function ($http,$scope,$stateParams,$state,restService,$filter,$rootScope) {
           $scope.day = moment();
           $scope.bkey=localStorage.getItem('satellizer_token');
           var date = new Date();
-           date.setDate(date.getDate() - 1);
-           var timeStamp = Date.now();//date.getTime();
-           $scope.clickDay=function (date) {
-             var timeStamp = date.unix()*1000;
+          date.setDate(date.getDate() - 1);
+          var timeStamp = Date.now();//date.getTime();
+          $scope.clickDay=function (date) {
+               // console.log(date);
+            console.log(date.calendar());
+            $rootScope.viewDay = date.calendar();
+
+            var timeStamp = date.unix()*1000;
+             console.log(timeStamp);
              $state.go("home.unmarkedEmp",{timeStamp});
            }
            var query ={token:"ddfksdn",timeStamp};
@@ -88,7 +95,8 @@ angular.module("mainApp").directive("calendar", function() {
               $scope.attendance={};
               data.data.attendance.forEach(function(value, key){
                 $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-
+                // $scope.attendance[value.day]={};
+                // console.log($scope.attendance[value.day]);
               });
 
             }).catch(function (error) {
@@ -120,25 +128,49 @@ angular.module("mainApp").directive("calendar", function() {
         }
     }
 
-    function _buildWeek(date, month,scope) {
-        var days = [];
-        for (var i = 0; i < 7; i++) {
 
-        
-            days.push({
-                name: date.format("dd").substring(0, 1),
-                number: date.date(),
-                isCurrentMonth: date.month() === month.month(),
-                isToday: date.isSame(new Date(), "day"),
-                date: date,
-                unmarked:scope.attendance[date.date()].unmarked,
-                totalEmployee:scope.attendance[date.date()].totalEmployee
+function _buildWeek(date, month,scope) {
+  var days = [];
+  if (scope.attendance !== undefined) {
+      for (var i = 0; i < 7; i++) {
+          //console.log(scope.attendance, k++);
+          if (date.month() === month.month() && (scope.attendance[date.date()] !== undefined)) {
+              if (scope.attendance[date.date()] !== undefined)
+                  days.push({
+                      name: date.format("dd").substring(0, 1),
+                      number: date.date(),
+                      isCurrentMonth: date.month() === month.month(),
+                      isToday: date.isSame(new Date(), "day"),
+                      timeStamp: date.unix(),
+                      date: date,
+                      unmarked:scope.attendance[date.date()].unmarked,
+                      totalEmployee:scope.attendance[date.date()].totalEmployee
 
-            });
-            date = date.clone();
-            date.add(1, "d");
-        }
-        return days;
-    }
+
+
+                  });
+          } else if (date.month() === month.month())
+              days.push({
+                  name: date.format("dd").substring(0, 1),
+                  number: date.date(),
+                  isCurrentMonth: date.month() === month.month(),
+                  timeStamp: date.unix(),
+                  isToday: date.isSame(new Date(), "day"),
+                  date: date,
+                  unmarked:scope.attendance[date.date()].unmarked,
+                  totalEmployee:scope.attendance[date.date()].totalEmployee
+
+
+
+              });
+              else
+              days.push({});
+
+          date = date.clone();
+          date.add(1, "d");
+      }
+  }
+  return days;
+}
 
 });

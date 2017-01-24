@@ -136,10 +136,6 @@ body {
         display: table-cell;
     }
 }
-  .row{
-    margin-left: 16px!important;
-  }
-
 nav {
     background-color: #D8D1C7 !important;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 50%) !important;
@@ -180,7 +176,18 @@ nav {
   background-color: #D8D1C7 ;
    border:none;
 }
+@media (max-width:720px)  {
 
+
+#nav-content{
+  margin-left: 5%!important;
+}
+.mail2{
+  margin-top: -10%!important;
+  }
+  .mail1{
+    margin-top: -11%!important;}
+  }
 .row ul li a {
     /*width:130px;*/
 
@@ -292,7 +299,7 @@ margin-top: -25px;
   margin-left:-40px;
   }
   .mail1{
-        margin-top: -14% !important;
+        margin-top: -10% !important;
   }
   .mail2{
     margin-top: -18% !important;
@@ -369,7 +376,6 @@ margin-top: -25px;
     letter-spacing: 0px;
     margin: 30%;
 }.date2 {
-
     width: 187px;
     height: 21px;
     opacity: 100;
@@ -403,11 +409,11 @@ margin-top: -25px;
   letter-spacing: 0px
 }
 .item {
-    width: auto;
+    width: 320px;
     height: auto;
 }
 .item1 {
-    width: auto;
+    width: 320;
     height: auto;
 }
 
@@ -513,7 +519,7 @@ margin-top: -25px;
   font-size: 36px;
   letter-spacing: 0px;
   margin-left: 90%;
-  margin-top: -5%;
+  margin-top: -3%;
 }
 
 
@@ -569,6 +575,8 @@ background-color: #E35656;
    /*margin-top: 5%;*/
    /*margin-left:3%;*/
    margin-right: 5%;
+
+
 }
 #main:hover {
      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 50%);
@@ -592,6 +600,7 @@ background-color: #E35656;
     clear: both;
 }
 
+
 #main .item {
     border: 1px solid #999999;
     box-shadow: .5px .5px .5px 1px grey;
@@ -602,11 +611,15 @@ background-color: #E35656;
      background-color: rgba(240, 237, 234, 1);
      box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 50%);
      border-radius: 5px;
+
 }
 
 .item-int {
     margin: 0 auto;
-    padding: 1px 0 30px;
+    /*padding: 1px 0 30px;*/
+    /*white-space: nowrap;*/
+   overflow: hidden!important;
+   text-overflow: ellipsis!important;
 
 }
 
@@ -752,6 +765,9 @@ h2{
 }
 #fallout1{
   color: #E35656;
+}
+#fallout2{
+  color: #6fb8d9;
 }
 #spanid{
   margin-top: 500px;

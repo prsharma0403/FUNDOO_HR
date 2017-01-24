@@ -11,14 +11,14 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
 
     var config = {
         method: 'POST',
-        url: 'http://192.168.0.133:3000/login'
+        url: 'http://192.168.0.17:3000/login'
     };
     $scope.login = function() {
       $scope.dataLoading = true;
         $auth.login($scope.user, config)
             .then(function(data) {
-                // console.log("You have successfully signed in!");
-                console.log("ok ", data);
+
+                // console.log("ok ", data);
                 $state.go('home');
                 // $location.path('/');
             })
