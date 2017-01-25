@@ -10,13 +10,24 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
 
     var config = {
         method: 'POST',
+<<<<<<< HEAD
         url: 'http://192.168.0.17:3000/login'
+=======
+        url: 'http://192.168.0.9:3000/login'
+>>>>>>> e5ec9a74556ad854cf72b0adb746685febac3b68
     };
     $scope.login = function() {
       $scope.dataLoading = true;
         $auth.login($scope.user, config)
             .then(function(data) {
+<<<<<<< HEAD
                 $state.go('home');
+=======
+                // console.log("You have successfully signed in!");
+                console.log("ok ", data);
+                // $state.go('home');
+                // $location.path('/');
+>>>>>>> e5ec9a74556ad854cf72b0adb746685febac3b68
             })
             .catch(function(error) {
                 console.log(error.data.message, error.status);
