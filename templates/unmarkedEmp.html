@@ -7,7 +7,7 @@
     </div>
     <div class="col-lg-4">
       <!-- {{yesterday | date : "dd, MMMM y" }} -->
-      <span class="date1"><center><b>{{viewDay}}</b></center></span>
+      <span class="date1"><center><b>{{viewDay| date : "dd, MMMM y" }}</b></center></span>
       <span class="rectangle2" style="color: #ffffff;">{{unmarkedNumber}}/{{totalEmployee}}</span>
       <span class="unmarkedEmp">Unmarked</span>
         </div>
@@ -17,7 +17,7 @@
       <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog modal-sm">
               <div class="modal-content">
-                  <p class="data">Do you want to send email alerts?</p>
+                  <p class="data">send email to unmarked !!</p>
               </div>
               <div>
                   <button id=btn type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

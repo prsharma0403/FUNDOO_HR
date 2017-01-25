@@ -1,11 +1,10 @@
 angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth, localStorageService,restService) {
 
 
-
+//for checking regular expression for email&password
     $scope.re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     $scope.ps = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
-    console.log("callinggggg");
 
 
 
@@ -17,15 +16,11 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
       $scope.dataLoading = true;
         $auth.login($scope.user, config)
             .then(function(data) {
-
-                // console.log("ok ", data);
                 $state.go('home');
-                // $location.path('/');
             })
             .catch(function(error) {
                 console.log(error.data.message, error.status);
                 $scope.error = "Incorrect email/password !";
-                // toastr.error(error.data.message, error.status);
             });
     };
     $scope.authenticate = function(provider) {

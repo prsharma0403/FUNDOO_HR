@@ -4,17 +4,19 @@ angular.module('mainApp').service('restService', function ($http, $log, $q) {
    //    function for GET
    this.getRequest = function (path, query) {
 
+// Deferred creates a new instance of the promise to be returned
        var deferred = $q.defer();
-       // console.log(query)
+
        $http({
            method: "GET",
            url: baseUrl + path,
            params: query
 
        }).then(function (data) {
-           //sending data...
+           // To fulfil a promise, use .resolve
            deferred.resolve(data);
        }), function (msg, code) {
+         // To reject a promise, use .reject
            deferred.reject(msg);
 
            $log.error(msg, code);
@@ -24,15 +26,18 @@ angular.module('mainApp').service('restService', function ($http, $log, $q) {
 
     //  function to POST
        this.postRequest = function (path,query) {
-         var deferred = $q.defer();
+         // Deferred creates a new instance of the promise to be returned
+          var deferred = $q.defer();
 
          $http ({
            method:"POST",
            url:baseUrl + path,
            data:query
          }).then(function(data) {
+           // To fulfil a promise, use .resolve
            deferred.resolve(data);
          }),function(msg,code) {
+            // To reject a promise, use .reject
            deferred.reject(msg);
            $log.error(msg,code);
          };

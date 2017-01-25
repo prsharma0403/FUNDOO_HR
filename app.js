@@ -52,7 +52,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
         })
         .state('home.fallout', {
             url: 'attendence',
-            templateUrl: 'templates/emp.html',
+            templateUrl: 'templates/empFallout.html',
             controller: 'empCtrl',
             resolve: {
                 loginRequired: loginRequired

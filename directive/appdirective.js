@@ -5,25 +5,27 @@ angular.module("mainApp").directive("calendar", function() {
         templateUrl: "templates/calendar.html",
         link: function(scope) {
 
-
+                //for calculating and changes the values up to changes
             scope.$watch("attendance",function(oldData,newData){
                 if(scope.called===undefined){
               scope.selected = _removeTime(scope.selected || moment());
               scope.month = scope.selected.clone();
-              // console.log("we are watching");
+
               var start = scope.selected.clone();
               start.date(1);
               _removeTime(start.day(0));
               _buildMonth(scope, start, scope.month);
 
-            }else if (scope.called===0) {
-              console.log("0000000");
+            }
+            else if (scope.called===0) {
+
               var next = scope.month.clone();
                   _removeTime(next.month(next.month() + 1).date(1));
               scope.month.month(scope.month.month() + 1);
               _buildMonth(scope, next, scope.month);
-            }else if (scope.called===1) {
-              console.log("1111111");
+            }
+               else if (scope.called===1) {
+
               var previous = scope.month.clone();
               _removeTime(previous.month(previous.month() - 1).date(1));
               scope.month.month(scope.month.month() - 1);
@@ -34,10 +36,6 @@ angular.module("mainApp").directive("calendar", function() {
 
             });
 
-
-            // scope.select = function(day) {
-            //     scope.selected = day.date;
-            // };
             scope.next = function() {
               scope.called=0;
                 var next = scope.month.clone();
@@ -52,9 +50,7 @@ angular.module("mainApp").directive("calendar", function() {
                 var previous = scope.month.clone();
 
                 var timeStamp2=(previous.month(previous.month() - 1).unix()*1000);
-                console.log(timeStamp2);
-                // _buildMonth(scope, previous, scope.month);
-                scope.readUnmark(timeStamp2);
+               scope.readUnmark(timeStamp2);
 
 
           };
@@ -66,12 +62,10 @@ angular.module("mainApp").directive("calendar", function() {
           date.setDate(date.getDate() - 1);
           var timeStamp = Date.now();//date.getTime();
           $scope.clickDay=function (date) {
-               // console.log(date);
-            console.log(date.calendar());
             $rootScope.viewDay = date.calendar();
 
             var timeStamp = date.unix()*1000;
-             console.log(timeStamp);
+
              $state.go("home.unmarkedEmp",{timeStamp});
            }
            var query ={token:"ddfksdn",timeStamp};
@@ -95,8 +89,7 @@ angular.module("mainApp").directive("calendar", function() {
               $scope.attendance={};
               data.data.attendance.forEach(function(value, key){
                 $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
-                // $scope.attendance[value.day]={};
-                // console.log($scope.attendance[value.day]);
+
               });
 
             }).catch(function (error) {
@@ -133,7 +126,7 @@ function _buildWeek(date, month,scope) {
   var days = [];
   if (scope.attendance !== undefined) {
       for (var i = 0; i < 7; i++) {
-          //console.log(scope.attendance, k++);
+
           if (date.month() === month.month() && (scope.attendance[date.date()] !== undefined)) {
               if (scope.attendance[date.date()] !== undefined)
                   days.push({
@@ -159,10 +152,7 @@ function _buildWeek(date, month,scope) {
                   date: date,
                   unmarked:scope.attendance[date.date()].unmarked,
                   totalEmployee:scope.attendance[date.date()].totalEmployee
-
-
-
-              });
+                  });
               else
               days.push({});
 
