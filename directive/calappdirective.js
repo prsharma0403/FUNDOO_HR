@@ -7,35 +7,36 @@ angular.module("mainApp").directive("calendar", function() {
 
                 //for calculating and changes the values up to changes
             scope.$watch("attendance",function(oldData,newData){
-                if(scope.called===undefined){
-              scope.selected = _removeTime(scope.selected || moment());
-              scope.month = scope.selected.clone();
+                if(scope.called===0) {
 
-              var start = scope.selected.clone();
-              start.date(1);
-              _removeTime(start.day(0));
-              _buildMonth(scope, start, scope.month);
+                  var next = scope.month.clone();
+                      _removeTime(next.month(next.month() + 1).date(1));
+                  scope.month.month(scope.month.month() + 1);
+                  _buildMonth(scope, next, scope.month);
 
             }
-            else if (scope.called===0) {
+            else if (scope.called===1) {
 
-              var next = scope.month.clone();
-                  _removeTime(next.month(next.month() + 1).date(1));
-              scope.month.month(scope.month.month() + 1);
-              _buildMonth(scope, next, scope.month);
+             var previous = scope.month.clone();
+             _removeTime(previous.month(previous.month() - 1).date(1));
+             scope.month.month(scope.month.month() - 1);
+             console.log(scope.month);
+             _buildMonth(scope, previous, scope.month);
             }
-               else if (scope.called===1) {
+               else if(scope.called===undefined){
+            scope.selected = _removeTime(scope.selected || moment());
+            scope.month = scope.selected.clone();
 
-              var previous = scope.month.clone();
-              _removeTime(previous.month(previous.month() - 1).date(1));
-              scope.month.month(scope.month.month() - 1);
-              console.log(scope.month);
-              _buildMonth(scope, previous, scope.month);
+            var start = scope.selected.clone();
+            start.date(1);
+            _removeTime(start.day(0));
+            _buildMonth(scope, start, scope.month);
+
             }
 
 
             });
-
+      //create  next and previous month calander object with timestamp generate
             scope.next = function() {
               scope.called=0;
                 var next = scope.month.clone();
@@ -55,16 +56,23 @@ angular.module("mainApp").directive("calendar", function() {
 
           };
         },
+
+        //controller
         controller:function ($http,$scope,$stateParams,$state,restService,$filter,$rootScope) {
           $scope.day = moment();
           $scope.bkey=localStorage.getItem('satellizer_token');
           var date = new Date();
+
+
           date.setDate(date.getDate() - 1);
           var timeStamp = Date.now();//date.getTime();
-          $scope.clickDay=function (date) {
-            $rootScope.viewDay = date.calendar();
+          $scope.clickDay=function (date)  //clicked date appear
+          {
+          $rootScope.clickDate=date._d;
+          console.log("date"+$rootScope.clickDate);
 
-            var timeStamp = date.unix()*1000;
+
+            var timeStamp = date.unix()*1000;//timesatamp coverted in milliseconds
 
              $state.go("home.unmarkedEmp",{timeStamp});
            }
@@ -82,10 +90,11 @@ angular.module("mainApp").directive("calendar", function() {
            }).catch(function (error) {
              console.log(error);
            })
-
+           //read umarked employee data for next and previous month buid
           $scope.readUnmark=function (timeStamp) {
             var query ={token:"ddfksdn",timeStamp};
             restService.getRequest('readMonthlyAttendanceSummary', query).then(function (data) {
+
               $scope.attendance={};
               data.data.attendance.forEach(function(value, key){
                 $scope.attendance[value.day]={"unmarked":value.unmarked,"totalEmployee":data.data.totalEmployee};
@@ -104,7 +113,7 @@ angular.module("mainApp").directive("calendar", function() {
     function _removeTime(date) {
         return date.day(0).hour(0).minute(0).second(0).millisecond(0);
     }
-
+// function used to buliding the month
     function _buildMonth(scope, start, month) {
         scope.weeks = [];
         var done = false,
@@ -121,9 +130,10 @@ angular.module("mainApp").directive("calendar", function() {
         }
     }
 
-
+//function used to building the week
 function _buildWeek(date, month,scope) {
   var days = [];
+
   if (scope.attendance !== undefined) {
       for (var i = 0; i < 7; i++) {
 

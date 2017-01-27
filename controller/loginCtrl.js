@@ -1,7 +1,7 @@
 angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth, localStorageService,restService) {
 
 
-//for checking regular expression for email&password
+//for checking regular expression for email&password in login page
     $scope.re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     $scope.ps = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
 
@@ -10,7 +10,7 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
 
     var config = {
         method: 'POST',
-        url: 'http://192.168.0.17:3000/login'
+        url: 'http://192.168.0.69:3000/login'
     };
     $scope.login = function() {
       $scope.dataLoading = true;

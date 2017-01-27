@@ -2,7 +2,7 @@
 
 
 angular.module('mainApp').controller('DashCtrl', function($scope, $location, $stateParams, $state, $auth, $http, localStorageService, restService) {
-//storing token in varible
+    //storing token in varible
     var token = localStorageService.get('token');
 
     $scope.today = new Date();
@@ -25,10 +25,10 @@ angular.module('mainApp').controller('DashCtrl', function($scope, $location, $st
         $scope.attendanceFallout = data.data.attendanceFallout;
         $scope.attendanceSummary = data.data.attendanceSummary;
         $scope.leaveSummary = data.data.leaveSummary;
-
-
-
         $scope.attendenceLeave = data.data.attendenceLeave;
+
+
+
     }).catch(function(error) {
         console.log(error);
     })

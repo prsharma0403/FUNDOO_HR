@@ -182,11 +182,15 @@ nav {
 #nav-content{
   margin-left: 5%!important;
 }
-.mail2{
-  margin-top: -10%!important;
-  }
+.mail2 {
+    margin-top: -9%!important;
+}
   .mail1{
     margin-top: -11%!important;}
+
+  .row{
+    margin-left:15px!important;
+  }
   }
 .row ul li a {
     /*width:130px;*/
@@ -670,6 +674,7 @@ background-color: #E35656;
 .left {
     float: left;
     margin-left: 2%;
+  
 }
 
 .note {

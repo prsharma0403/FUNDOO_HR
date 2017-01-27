@@ -4,7 +4,6 @@
 
 angular.module('mainApp')
     .controller('empCtrl', empCtrl)
-// localStorage.setItem('tom', 'prashant');
 
 
 /* Controllers */
@@ -21,19 +20,19 @@ function empCtrl($scope, $http, $stateParams, restService) {
     $scope.yesterday = date;
     var timeStamp = date.getTime();
 
-    console.log(timeStamp);
+
     var query = {
         token: localStorage.getItem("satellizer_token"),
         timeStamp: timeStamp
     };
-    console.log(query);
+
     var promise = restService.getRequest('readFalloutAttendanceEmployee', query);
     promise.then(function(data) {
 
 
 
 
-        console.log(data.data);
+        // console.log(data.data);
         $scope.items = data.data.falloutEmployee;
         $scope.fall = data.data.falloutNumber;
         $scope.totalEmployee = data.data.totalEmployee;
@@ -45,7 +44,7 @@ function empCtrl($scope, $http, $stateParams, restService) {
 
 
 
-//storing all emp data in an array 
+//storing all emp data in an empty array
     $scope.cardItems = [];
 
     $scope.employees = function(employeeName, employeeStatus, company, mobile, emailId) {
