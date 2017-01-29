@@ -27,7 +27,7 @@
             <div class="modal fade" id="mymodal1" role="dialog">
                 <div class="modal-dialog modal-sm">
                     <div class="modal-content">
-                        <p class="data1">Sent Successfully!</p>
+                        <p class="data1">{{message}}</p>
                     </div>
                     <div>
                         <button id="btn2" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
@@ -38,7 +38,7 @@
     </div>
 
     <div><span class="rectangle" style="color: #ffffff;">{{fall}}/{{totalEmployee}}</span>&nbsp&nbsp<span class="FalloutAttendence">Fall Out</span></div>
-    <itemCard></itemCard>
+    <itemCard1></itemCard1>
     <div class="row cards">
         <div id="main" class="col-lg-3 col-md-4 col-xs-12" ng-repeat="i in items">
             <div item-card item="i"></div>

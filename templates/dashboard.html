@@ -1,20 +1,19 @@
 <div class="container dash">
     <div class="row">
         <!-- Card Projects -->
-
-        <div class="col-md-6 col-lg-4  col-xs-12">
+         <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Summary
                     <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
                     <span class="card-action"><a target="new_blank"></a></span></h4>
                     <div>
-                        <center><span class="date2">{{ yesterday | date : "dd MMMM y" }}</span></center>
+                  <center><span class="date2">{{ yesterday | date : "dd MMMM y" }}</span></center>
                     </div>
                 </div>
                 <center>
                     <table>
-                        <tr>
+                      <tr>
                             <td>
                                 <h2><div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div></h2>
                             </td>
@@ -30,33 +29,32 @@
                                 <span style="color:#E35656;">Unmarked</span>
                             </td>
                         </tr>
+
+
                     </table>
                 </center>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4  col-xs-12">
+               </div>
+           </div>
+     <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <h4 class="text">Attendance Fallout
                       <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br></br>
-</a></span></h4>
+                       </a></span></h4>
                     <br>
                     <center>
                         <table>
-                            <tr>
-                                <td id="fallout">
-                                    <span id="spanid">{{attendanceFallout.falloutEmployee}}</span></div>
-                </td>
-                </tr>
-                <tr>
+                          <tr>
+                            <td id="fallout">
+                              <span id="spanid">{{attendanceFallout.falloutEmployee}}</span></div>
+                               </td>
+                                </tr>
+                                    <tr>
                     <td id="fallout1">
                         <span>out of {{attendanceFallout.totalEmployee}}</span>
                     </td>
-
-                </tr>
-
-
-                </table>
+                     </tr>
+                 </table>
                 </center>
                 <center><span class="date3">{{ today | date : "MMMM y" }}</span></center>
             </div>
@@ -68,9 +66,7 @@
             <div class="header">
                 <h4 class="text">Leave Summary
                      <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
-
-
-                <div class="leave">
+                     <div class="leave">
                     <center>
                         <table>
                             <tr>
@@ -86,12 +82,7 @@
                         </table>
                     </center>
                 </div>
-
-
-
-
-
-                <center><span class="date4">{{ today | date : "MMMM y" }}</span></center>
+              <center><span class="date4">{{ today | date : "MMMM y" }}</span></center>
             </div>
         </div>
     </div>

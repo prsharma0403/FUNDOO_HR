@@ -1,7 +1,7 @@
 
 angular.module('mainApp')
 
-    .directive('itemCard1', function() {
+    .directive('itemCard', function() {
         // return the directive definition object
         return {
             scope: {
@@ -13,12 +13,8 @@ angular.module('mainApp')
                     mainScope.employees(value, key);
                     return false;
                 };
-            },
+               },
             replace: true,
-
-           templateUrl:'templates/unmarked.html'
-          
-
-        };
-
+           templateUrl:'templates/unmarkedempcard.html'
+       };
     });

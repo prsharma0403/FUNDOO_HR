@@ -41,33 +41,34 @@ span {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
 }
-@media (min-width: 725px) {
-  .calendar {
-    margin-left: 100px;
-    width:70%;
-  }}
-  @media (max-width: 724px) {
-    .calendar {
-      margin-left: 0px;
-      width:100%;
-    }}
 
+@media (min-width: 725px) {
+    .calendar {
+        margin-left: 100px;
+        width: 65%;
+    }
+}
+
+@media (max-width: 724px) {
+    .calendar {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
 
 @border-colour: #d8d1c7;
 .calendar {
-    float:left;
+    float: left;
     display: block;
     background: white;
     font-family: Applegothic;
-    border: solid 2px @border-colour;
+    border: solid 4px @border-colour;
     margin-bottom: 40px;
     border-radius: 8px;
-    border-width:#18880d 3px;
+    border-width: #18880d 3px;
     border-color: #6fb8d9;
-
     @spacing: 5px;
     @icon-width: 20px;
-
     div.week {
         float: left;
         width: 100%;
@@ -76,14 +77,13 @@ span {
             float: left;
             width: 100%/7;
             .border-box;
-            border-left: solid 1px @border-colour;
+            border-left: solid 2px @border-colour;
             font-size: 17px;
-         font-family: serif;
+            font-family: serif;
             text-align: center;
             .vertical-centre(70px);
             background: white;
             cursor: pointer;
-
             &.different-month {
                 color: white;
             }

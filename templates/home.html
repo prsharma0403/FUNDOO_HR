@@ -16,34 +16,29 @@
                 <span style="color:#3B5372;">FundooHR </span>
 
             </div>
-
-        </div>
-
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
+         </div>
+     <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="date"><span class="glyphicon glyphicon-time"style="color:#3B5372;">{{today | date: " dd,MMMMy"}}</span>  </a>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle name" data-toggle="dropdown" id="name">
-                        <span class="glyphicon glyphicon-user"style="color:#3B5372;" > {{ name}}</span>
+                        <span class="glyphicon glyphicon-user"style="color:#3B5372;">{{name}}</span>
                         <span class="caret"style="color:#3B5372;"></span></a>
                     <ul class="dropdown-menu" id="block">
                         <li class="mail">prsharma0403@gmail.com</li>
                         <li ng-if="isAuth()">
                             <a ui-sref="logout" class="logout"><span class="glyphicon glyphicon-off"style="color:#D8D1C7;"> logout</span> </a>
                         </li>
-
-                    </ul>
+                       </ul>
                 </li>
             </ul>
             <div class="row">
 
                 <ul class="nav navbar-nav "id="nav-content">
                     <li ng-class="{'active':(nav==='dashboard')}"><a ng-click="nav='dashboard'" ui-sref="home.DashBoard">DashBoards</a></li>
-
-                    <li><a>Engineer</a></li>
+                     <li><a>Engineer</a></li>
                     <li ng-class="{'active':(nav==='attendence')}"><a ng-click="nav='attendence'" ui-sref="home.Attendence">Attendence</a></li>
                     <li><a>Clients</a></li>
                     <li><a>Reports</a></li>

@@ -1,20 +1,23 @@
+/**
+ * FileName:app.js
+ * CreatedBy: Prashant Praveen
+ * purpose : perform routing according to state
+  * */
+
 var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate', 'ngAria', 'ngMessages', 'satellizer', 'toastr', 'LocalStorageModule']);
-mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
-    var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
 
-
+         /**configure existing service*/
+        mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $authProvider) {
+        var skipIfLoggedIn = ['$q', '$auth', function($q, $auth) {
         var deferred = $q.defer(); //Deferred creates a new instance of the promise to be returned
         if ($auth.isAuthenticated()) {
             deferred.reject(); // To reject a promise, use .reject
-
-        } else {
+         } else {
             deferred.resolve(); // To fulfil a promise, use .resolve
-
-        }
-        return deferred.promise;
-    }];
-
-    var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
+           }
+           return deferred.promise;
+           }]; //end of function
+        var loginRequired = ['$q', '$location', '$auth', function($q, $location, $auth) {
         var deferred = $q.defer();
         if ($auth.isAuthenticated()) {
             deferred.resolve();
@@ -22,11 +25,21 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
             $location.path('/login');
         }
         return deferred.promise;
-    }];
+    }]; //end of function
+    /* $stateProvider give different states*/
     $urlRouterProvider.otherwise('/');
+    /* $stateProvider give different states*/
     $stateProvider
-
-        //login state actions performing
+    /* configure the home state*/
+           .state('home', {
+            url: '/',
+            templateUrl: 'templates/home.html',
+            controller: 'HomeCtrl',
+            resolve: {
+                loginRequired: loginRequired
+            }
+        })
+        /* configure the logout state*/
         .state('login', {
             url: '/login',
             templateUrl: 'templates/login.html',
@@ -35,57 +48,47 @@ mainApp.config(function($stateProvider, $urlRouterProvider, $httpProvider, $auth
                 skipIfLoggedIn: skipIfLoggedIn
             }
         })
-        //logout state actions performing
+        /* configure the logout state*/
         .state('logout', {
             url: '/logout',
             template: null,
             controller: 'LogoutCtrl'
         })
-        //home states actions performing
-        .state('home', {
-            url: '/',
-            templateUrl: 'templates/home.html',
-            controller: 'HomeCtrl',
-            resolve: {
-                loginRequired: loginRequired
-            }
-        })
-        //dashboard states actions performing
+
+        /* configure the DashBoard state*/
         .state('home.DashBoard', {
             url: 'dash',
-            templateUrl: 'templates/dash.html',
+            templateUrl: 'templates/dashboard.html',
             controller: 'DashCtrl',
             resolve: {
                 loginRequired: loginRequired
             }
         })
-        //fallout state actions performing
+        /* configure the Fallout state*/
         .state('home.fallout', {
             url: 'attendence',
-            templateUrl: 'templates/empFallout.html',
+            templateUrl: 'templates/falloutemp.html',
             controller: 'empCtrl',
             resolve: {
-                loginRequired: loginRequired
+            loginRequired: loginRequired
             }
         })
-        //calender page states actions performing
+        /* configure the home calander state*/
         .state('home.Attendence', {
             url: 'calender',
             template: '<calendar></calendar>',
             controller: null,
             resolve: {
-                loginRequired: loginRequired
+            loginRequired: loginRequired
             }
         })
 
-        //unmarked  employee page actions performing
-        .state('home.unmarkedEmp', {
+        /* configure the unmarkedEmp state*/
+            .state('home.unmarkedEmp', {
             url: 'unmarkedEmp/:timeStamp',
             templateUrl: 'templates/unmarkedEmp.html',
             controller: 'unmarkedEmp'
-            // resolve: {
-            //     loginRequired: loginRequired
-            // }
+
 
         })
 
