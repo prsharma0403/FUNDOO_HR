@@ -68,7 +68,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         .state('home.fallout', {
             url: 'attendence',
             templateUrl: 'templates/falloutemp.html',
-            controller: 'empCtrl',
+            controller: 'falloutCtrl',
             resolve: {
             loginRequired: loginRequired
             }

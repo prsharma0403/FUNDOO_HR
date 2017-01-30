@@ -26,15 +26,19 @@
     });
     $scope.confirm=function () {
     var token=localStorage.getItem('satellizer_token');
+      $scope.today = new Date();
     var timeStamp = date.getTime();
-   var query = {
-   timeStamp: timeStamp
+ var query = {
+  timeStamp: timeStamp
    };
-   var config = {
-   "x-token": token
-   };
-    restService.postRequest('sendEmailToUnmarkedEmployee',query).then(function (data) {
+ var config = {
+ "x-token": token
+ };
+ console.log( "x-token");
+
+    restService.postRequest('sendEmailToUnmarkedEmployee',query,config).then(function (data) {
       if (data.data.status === 200) {
+           $('#mymodal1').modal('show');
           $scope.message = "Sent Successfully!";
           console.log($scope.message);
       } else {

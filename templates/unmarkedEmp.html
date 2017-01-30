@@ -18,19 +18,18 @@
                 <p class="data">send email to unmarked !!</p>
             </div>
             <div>
-                <button id=btn type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button id=btn1 type="button" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#mymodal1">Yes</button>
+                <button id=btn type="button" class="btn btn-default" data-dismiss="modal"ng-click="cancel()">Cancel</button>
+                <button id=btn1 type="button" class="btn btn-default" data-dismiss="modal"ng-click="confirm()">Yes</button>
             </div>
         </div>
-    </div>
-  </div>
-  <div class="modal fade" id="mymodal1" role="dialog">
-      <div class="modal-dialog modal-sm">
-          <div class="modal-content">
-              <p class="data1">{{message}}</p>
-          </div>
-          <div>
-              <button id="btn2" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+      </div>
+      <div class="modal fade" id="mymodal1" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="data1">{{message}}</p>
+            </div>
+            <div>
+                <button id="btn2" type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
           </div>
       </div>
   </div>

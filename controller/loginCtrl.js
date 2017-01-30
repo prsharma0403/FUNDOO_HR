@@ -12,7 +12,7 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
     $scope.ps = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
         var config = {
         method: 'POST',
-        url: 'http://192.168.0.2:3000/login'
+        url: 'http://192.168.0.11:3000/login'
     };
 
     $scope.login = function() {
