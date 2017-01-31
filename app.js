@@ -33,7 +33,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
     /* configure the home state*/
            .state('home', {
             url: '/',
-            templateUrl: 'templates/home.html',
+            templateUrl: 'templates/Home.html',
             controller: 'HomeCtrl',
             resolve: {
                 loginRequired: loginRequired
@@ -42,7 +42,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         /* configure the logout state*/
         .state('login', {
             url: '/login',
-            templateUrl: 'templates/login.html',
+            templateUrl: 'templates/Login.html',
             controller: 'LoginCtrl',
             resolve: {
                 skipIfLoggedIn: skipIfLoggedIn
@@ -58,7 +58,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         /* configure the DashBoard state*/
         .state('home.DashBoard', {
             url: 'dash',
-            templateUrl: 'templates/dashboard.html',
+            templateUrl: 'templates/Dashboard.html',
             controller: 'DashCtrl',
             resolve: {
                 loginRequired: loginRequired
@@ -67,15 +67,15 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         /* configure the Fallout state*/
         .state('home.fallout', {
             url: 'attendence',
-            templateUrl: 'templates/falloutemp.html',
-            controller: 'empCtrl',
+            templateUrl: 'templates/Falloutemp.html',
+            controller: 'falloutCtrl',
             resolve: {
             loginRequired: loginRequired
             }
         })
         /* configure the home calander state*/
         .state('home.Attendence', {
-            url: 'calender',
+            // url: 'calender',
             template: '<calendar></calendar>',
             controller: null,
             resolve: {
@@ -86,7 +86,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         /* configure the unmarkedEmp state*/
             .state('home.unmarkedEmp', {
             url: 'unmarkedEmp/:timeStamp',
-            templateUrl: 'templates/unmarkedEmp.html',
+            templateUrl: 'templates/UnmarkedEmp.html',
             controller: 'unmarkedEmp'
 
 

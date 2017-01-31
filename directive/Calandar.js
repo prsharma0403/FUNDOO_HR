@@ -6,7 +6,7 @@
 angular.module("mainApp").directive("calendar", function() {
     return {
         restrict: "E",
-        templateUrl: "templates/calendar.html",
+        templateUrl: "templates/Calendar.html",
         link: function(scope) {
             /*watch service is used to watch the changes in old and the new Data*/
 

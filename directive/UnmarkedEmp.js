@@ -15,6 +15,6 @@ angular.module('mainApp')
                 };
                },
             replace: true,
-           templateUrl:'templates/unmarkedempcard.html'
+           templateUrl:'templates/UnmarkedEmpcard.html'
        };
     });

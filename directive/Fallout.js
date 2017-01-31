@@ -15,7 +15,7 @@
                     };
                 },
                 replace: true,
-                templateUrl: 'templates/falloutcards.html'
+                templateUrl: 'templates/Falloutcards.html'
 
             };
 
