@@ -25,7 +25,7 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
             $location.path('/login');
         }
         return deferred.promise;
-    }]; //end of function
+    }];
     /* $stateProvider give different states*/
     $urlRouterProvider.otherwise('/');
     /* $stateProvider give different states*/

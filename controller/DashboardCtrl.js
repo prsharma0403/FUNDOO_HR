@@ -3,7 +3,9 @@
 */
 
 'use strict';
-angular.module('mainApp').controller('DashCtrl', function($scope, $location, $stateParams, $state, $auth, $http, localStorageService, restService) {
+angular.module('mainApp').controller('DashCtrl', function($scope, $location,
+        $stateParams, $state, $auth, $http, localStorageService, restService)
+{
     //storing token in varible
     var token = localStorage.getItem('satellizer_token');
     console.log(token);
@@ -27,7 +29,7 @@ angular.module('mainApp').controller('DashCtrl', function($scope, $location, $st
         $scope.attendanceSummary = data.data.attendanceSummary;
         $scope.leaveSummary = data.data.leaveSummary;
         $scope.attendenceLeave = data.data.attendenceLeave;
-}).catch(function(error) {
+    }).catch(function(error) {
         console.log(error);
     })
 });

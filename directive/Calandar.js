@@ -3,14 +3,15 @@
  * CreatedBy: Prashant Praveen
 
  */
-angular.module("mainApp").directive("calendar", function() {
+angular.module("mainApp").directive("calendar", function()
+{
     return {
         restrict: "E",
         templateUrl: "templates/Calendar.html",
         link: function(scope) {
             /*watch service is used to watch the changes in old and the new Data*/
 
-            scope.$watch("attendance", function(oldData, newData) {
+        scope.$watch("attendance", function(oldData, newData) {
                 if (scope.called === 0) {
                   var next = scope.month.clone();
                     _removeTime(next.month(next.month() + 1).date(1));
@@ -34,22 +35,23 @@ angular.module("mainApp").directive("calendar", function() {
               });
             //create  next and previous month calander object with timestamp generate
             scope.next = function() {
-                scope.called = 0;
-                var next = scope.month.clone();
-                next.month(next.month() + 1);
-                _removeTime(next.month(next.month() + 1).date(1));
-                var timeStamp1 = next.unix();
-                scope.readUnmark(timeStamp1 * 1000);
+            scope.called = 0;
+            var next = scope.month.clone();
+            next.month(next.month() + 1);
+            _removeTime(next.month(next.month() + 1).date(1));
+            var timeStamp1 = next.unix();
+            scope.readUnmark(timeStamp1 * 1000);
             };
 
             scope.previous = function() {
-                scope.called = 1;
-                var previous = scope.month.clone();
-                 var timeStamp2 = (previous.month(previous.month() - 1).unix() * 1000);
-                scope.readUnmark(timeStamp2);
-                 };
-             },
-        controller: function($http, $scope, $stateParams, $state, restService, $filter, $rootScope) {
+            scope.called = 1;
+            var previous = scope.month.clone();
+            var timeStamp2 = (previous.month(previous.month() - 1).unix() * 1000);
+            scope.readUnmark(timeStamp2);
+           };
+        },
+        controller: function($http, $scope, $stateParams, $state, restService,
+           $filter, $rootScope) {
 
             // debugger;
             $scope.day = moment();
@@ -58,7 +60,7 @@ angular.module("mainApp").directive("calendar", function() {
             var timeStamp = Date.now(); //date.getTime();
             $scope.clickDay = function(date) //clicked date appear
             {
-                $rootScope.clickDate = date._d;
+              $rootScope.clickDate = date._d;
                 console.log("date" + $rootScope.clickDate);
                  var timeStamp = date.unix() * 1000; //timesatamp coverted in milliseconds
                     $state.go("home.unmarkedEmp", {
@@ -71,11 +73,12 @@ angular.module("mainApp").directive("calendar", function() {
             var config = {
                 "x-token": token
             }
-            restService.getRequest('readMonthlyAttendanceSummary', query, config).then(function(data) {
+            restService.getRequest('readMonthlyAttendanceSummary', query,
+            config).then(function(data) {
                 console.log(data);
                 $scope.attendance = {};
                 data.data.attendance.forEach(function(value, key) {
-                   $scope.attendance[value.day] = {
+                $scope.attendance[value.day] = {
                         "unmarked": value.unmarked,
                         "totalEmployee": data.data.totalEmployee
                     };
@@ -91,7 +94,8 @@ angular.module("mainApp").directive("calendar", function() {
                 var config = {
                     "x-token": token
                 }
-                restService.getRequest('readMonthlyAttendanceSummary', query, config).then(function(data) {
+                restService.getRequest('readMonthlyAttendanceSummary', query,
+                 config).then(function(data) {
                   $scope.attendance = {};
                     data.data.attendance.forEach(function(value, key) {
                         $scope.attendance[value.day] = {
@@ -107,7 +111,7 @@ angular.module("mainApp").directive("calendar", function() {
      };
 
     function _removeTime(date) {
-        return date.day(0).hour(0).minute(0).second(0).millisecond(0);
+    return date.day(0).hour(0).minute(0).second(0).millisecond(0);
     }
 
     function _buildMonth(scope, start, month) {
@@ -132,7 +136,7 @@ angular.module("mainApp").directive("calendar", function() {
 
         if (scope.attendance !== undefined) {
             for (var i = 0; i < 7; i++) {
-        if (date.month() === month.month() && (scope.attendance[date.date()] !== undefined)) {
+if (date.month() === month.month() && (scope.attendance[date.date()] !== undefined)) {
         if (scope.attendance[date.date()] !== undefined)
                         days.push({
                             name: date.format("dd").substring(0, 1),

@@ -5,9 +5,9 @@
 *param(function)self invoke dependenciesare added in it
  bind the controller with the module and inject the services
 */
-
-
-angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth, localStorageService,restService) {
+   angular.module('mainApp').controller('LoginCtrl', function($scope, $state,
+    $auth, localStorageService,restService)
+  {
     $scope.re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
     $scope.ps = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
         var config = {
@@ -46,4 +46,4 @@ angular.module('mainApp').controller('LoginCtrl', function($scope, $state, $auth
                 }
             });
         };
-});
+     });

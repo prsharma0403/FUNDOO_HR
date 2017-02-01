@@ -25,7 +25,18 @@ body {
     font-family: MyriadPro-Light;
     /*margin-top:5%;*/
 }
-
+@media only screen and (width: 800px) {
+.unmarkedEmp {
+    width: 85px;
+    height: 22px;
+    opacity: 100;
+    text-align:center!important;
+    color: #E35656;
+    font-family: AppleGothic;
+    line-height: 0px;
+    font-size: 18px;
+    letter-spacing: 0px;
+}}
 @media only screen and (max-width: 600px) {
     #login-card {
         margin: 5% auto auto 10%;
@@ -145,7 +156,7 @@ nav {
 
 #mainNav {
     box-shadow: 1px 1px 5px 1px grey;
-        margin-right: -12;
+        margin-right: -1%;
 }
 
 .nav-brand {
@@ -212,7 +223,12 @@ nav {
     letter-spacing: 0px;
     margin-bottom: 16px;
 }
-
+.row  {
+    text-align:center!important;
+    }
+    #rowA {
+        text-align:center!important;
+        }
 .logo {
     width: 43px;
     height: 47px;
@@ -393,7 +409,7 @@ nav {
     /*line-height: 0px;*/
     font-size: 30px;
     letter-spacing: 0px;
-    margin: 30%;
+    /*margin: 30%;*/
 }
 
 .date2 {
@@ -513,17 +529,27 @@ nav {
     margin-left: 38%;
 }
 
+@media (width: 412px){
+  .back1{
+    margin-bottom: -20%;
+
+  }
+
+}
 .back {
-    width: 30px;
-    height: 30px;
-    text-align: left;
-    color: #3B5372;
-    margin-left: 30px;
-    font-family: material;
-    line-height: 0px;
-    font-size: 30px;
-    letter-spacing: 0px;
-    margin-bottom: -80px;
+margin-right:80%;
+height:30px;
+width:30px;
+text-align: left;
+margin-bottom: -5%;
+}
+.back1 {
+margin-right:80%;
+height:30px;
+width:30px;
+text-align: left;
+margin-bottom: -8%;
+
 }
 
 .mail1 {
@@ -535,7 +561,7 @@ nav {
     line-height: 0px;
     font-size: 36px;
     letter-spacing: 0px;
-    margin-left: 90%;
+    margin-left:85%;
     margin-top: -1%;
 }
 
@@ -548,7 +574,7 @@ nav {
     line-height: 0px;
     font-size: 36px;
     letter-spacing: 0px;
-    margin-left: 90%;
+    margin-left:85%;
     margin-top: -5%;
 }
 
@@ -669,7 +695,7 @@ padding: 7px;
 }
 
 .item-int img {
-    width: 110px;
+    width: 100px;
     float: left;
     margin: 2%;
     margin-top: -30px;
