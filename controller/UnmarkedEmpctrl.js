@@ -7,8 +7,10 @@
     localStorageService, restService,$filter)
   {
       var token = localStorage.getItem('satellizer_token');
-      $scope.today = new Date();
+      // $scope.today = new Date();
+
       var timeStamp = $stateParams.timeStamp;
+      $scope.clickDate=new Date(Number(timeStamp));
       var query = {
             timeStamp: timeStamp
     };
@@ -27,8 +29,7 @@
     });
         $scope.confirm=function () {
         var token=localStorage.getItem('satellizer_token');
-        $scope.today = new Date();
-        var timeStamp =   $scope.today.getTime();
+        // $scope.today = new Date();
         var query = {
                   timeStamp: timeStamp
    };
