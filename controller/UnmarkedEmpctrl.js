@@ -2,21 +2,22 @@
  * FileName:unmarkedEmp.js
  bind the controller with the module and inject the services
 */
-
-  angular.module('mainApp').controller('unmarkedEmp', function($scope,$rootScope, $location, $stateParams, $state, $auth, $http, localStorageService, restService,$filter) {
+    angular.module('mainApp').controller('unmarkedEmp', function($scope,
+    $rootScope, $location, $stateParams, $state, $auth, $http,
+    localStorageService, restService,$filter)
+  {
       var token = localStorage.getItem('satellizer_token');
       $scope.today = new Date();
       var timeStamp = $stateParams.timeStamp;
-
-       var query = {
-        timeStamp: timeStamp
+      var query = {
+            timeStamp: timeStamp
     };
-
-    var config={
-      "x-token":token
+      var config={
+         "x-token":token
     }
-   restService.getRequest('readUnmarkedAttendanceEmployee', query,config).then(function(data) {
-
+        restService.getRequest('readUnmarkedAttendanceEmployee',
+        query,config).then(function(data)
+    {
         $scope.totalEmployee = data.data.totalEmployee;
         $scope.unmarkedNumber = data.data.unmarkedNumber;
         $scope.display = "umarkedEmployee";
@@ -24,40 +25,40 @@
         $scope.imageUrl=data.data.imageUrl;
         $scope.display = "umarkedEmployee";
     });
-    $scope.confirm=function () {
-    var token=localStorage.getItem('satellizer_token');
-      $scope.today = new Date();
-    var timeStamp =   $scope.today.getTime();
- var query = {
-  timeStamp: timeStamp
+        $scope.confirm=function () {
+        var token=localStorage.getItem('satellizer_token');
+        $scope.today = new Date();
+        var timeStamp =   $scope.today.getTime();
+        var query = {
+                  timeStamp: timeStamp
    };
- var config = {
- "x-token": token
+        var config = {
+                 "x-token": token
  };
- console.log( "x-token");
+        console.log( "x-token");
 
-    restService.postRequest('sendEmailToUnmarkedEmployee',query,config).then(function (data) {
-      if (data.data.status === 200) {
+       restService.postRequest('sendEmailToUnmarkedEmployee',
+       query,config).then(function (data) {
+       if (data.data.status === 200) {
            $('#mymodal1').modal('show');
-          $scope.message = "Sent Successfully!";
-          console.log($scope.message);
-      } else {
-          $scope.message = "Cannot sent";
-          console.log("hi"+$scope.message);
+           $scope.message = "Sent Successfully!";
+           console.log($scope.message);
+      }
+      else  {
+             $scope.message = "Cannot sent";
+             console.log("hi"+$scope.message);
       }
 
    });
    }
-   $scope.cancel = function() {
-      console.log("message cant sent");
+            $scope.cancel = function() {
+            console.log("message cant sent");
    }
+            $scope.cardItems = [];
 
-
-    $scope.cardItems = [];
-
-    $scope.employees = function(employeeName, employeeStatus, company, mobile, emailId) {
-        var objAdded = {
-
+            $scope.employees = function(employeeName, employeeStatus,
+             company, mobile, emailId) {
+             var objAdded = {
             employeeName: employeeName,
             employeeStatus: employeeStatus,
             company: company,
@@ -65,7 +66,7 @@
             emailId: emailId,
             imageUrl:imageUrl
         };
-        $scope.cardItems.push(objAdded);
+            $scope.cardItems.push(objAdded);
     };
 
 });

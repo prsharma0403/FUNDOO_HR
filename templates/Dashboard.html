@@ -1,121 +1,114 @@
 <div class="container dash">
-    <div class="row">
-        <!-- Card Projects -->
-         <div class="col-md-6 col-lg-4  col-xs-12">
-            <div class="card1">
-                <div class="header">
-                    <h4 class="text">Attendance Summary
+<div class="row">
+    <!-- Card Projects -->
+    <div class="col-md-6 col-lg-4  col-xs-12">
+        <div class="card1">
+            <div class="header">
+                <h4 class="text">Attendance Summary
                     <span><a ui-sref="home.Attendence"><img class="toc1" ng-src="images/summary.png"></img></a></span><br>
                     <span class="card-action"><a target="new_blank"></a></span></h4>
-                    <div>
-                  <center><span class="date2">{{ yesterday | date : "dd MMMM y" }}</span></center>
-                    </div>
+                <div>
+                    <center><span class="date2">{{ yesterday | date : "dd MMMM y" }}</span></center>
                 </div>
+            </div>
+            <center>
+                <table>
+                    <tr>
+                        <td>
+                            <h2><div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div></h2>
+                        </td>
+                        <td>
+                            <h2><div class="numberCircle1"><span>{{attendanceSummary.unmarked}}</span></div></h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="color:green">Marked</span>
+                        </td>
+                        <td>
+                            <span style="color:#E35656;">Unmarked</span>
+                        </td>
+                    </tr>
+               </table>
+            </center>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-4  col-xs-12">
+        <div class="card1">
+            <div class="header">
+                <h4 class="text">Attendance Fallout
+                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br></br>
+                       </a></span></h4>
+                <br>
                 <center>
                     <table>
-                      <tr>
-                            <td>
-                                <h2><div class="numberCircle"><span>{{attendanceSummary.marked}}</span></div></h2>
+                        <tr>
+                            <td id="fallout">
+                                <span id="spanid">{{attendanceFallout.falloutEmployee}}</span></div>
                             </td>
-                            <td>
-                                <h2><div class="numberCircle1"><span>{{attendanceSummary.unmarked}}</span></div></h2>
+                        </tr>
+                    <tr>
+                <td id="fallout1">
+                <span>out of {{attendanceFallout.totalEmployee}}</span>
+                </td>
+            </tr>
+            </table>
+            </center>
+            <center><span class="date3">{{ today | date : "MMMM y" }}</span></center>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6 col-lg-4  col-xs-12">
+    <div class="card1">
+        <div class="header">
+            <h4 class="text">Leave Summary
+                     <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
+            <div class="leave">
+                <center>
+                    <table>
+                        <tr>
+                            <td id="fallout">
+                                <span id="spanid">{{leaveSummary.leave}}</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <span style="color:green">Marked</span>
-                            </td>
-                            <td>
-                                <span style="color:#E35656;">Unmarked</span>
+                            <td id="fallout2">
+                                <span>uptil</span>
                             </td>
                         </tr>
-
-
                     </table>
                 </center>
-               </div>
-           </div>
-     <div class="col-md-6 col-lg-4  col-xs-12">
-            <div class="card1">
-                <div class="header">
-                    <h4 class="text">Attendance Fallout
-                      <span><a ui-sref="home.fallout"><img class="toc1" ng-src="images/summary.png"></img></a></span><br></br>
-                       </a></span></h4>
-                    <br>
-                    <center>
-                        <table>
-                          <tr>
-                            <td id="fallout">
-                              <span id="spanid">{{attendanceFallout.falloutEmployee}}</span></div>
-                               </td>
-                                </tr>
-                                    <tr>
-                    <td id="fallout1">
-                        <span>out of {{attendanceFallout.totalEmployee}}</span>
-                    </td>
-                     </tr>
-                 </table>
-                </center>
-                <center><span class="date3">{{ today | date : "MMMM y" }}</span></center>
             </div>
+            <center><span class="date4">{{ today | date : "MMMM y" }}</span></center>
         </div>
     </div>
-
-    <div class="col-md-6 col-lg-4  col-xs-12">
-        <div class="card1">
-            <div class="header">
-                <h4 class="text">Leave Summary
-                     <span class="card-action"><a target="new_blank"><img class="toc1" src="images/summary.png"/></img></a></span></h4>
-                     <div class="leave">
-                    <center>
-                        <table>
-                            <tr>
-                                <td id="fallout">
-                                    <span id="spanid">{{leaveSummary.leave}}</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td id="fallout2">
-                                    <span>uptil</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </center>
-                </div>
-              <center><span class="date4">{{ today | date : "MMMM y" }}</span></center>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Card Projects -->
-
-    <div class="col-md-6 col-lg-4  col-xs-12">
-        <div class="card1">
-            <div class="header">
-                <span class="card-action"><a  ui-sref=".Engineers">
+</div>
+<!-- Card Projects -->
+<div class="col-md-6 col-lg-4  col-xs-12">
+    <div class="card1">
+        <div class="header">
+            <span class="card-action"><a  ui-sref=".Engineers">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                <h4 class="text1">Engineers</h4><span>
+            <h4 class="text1">Engineers</h4><span>
                  </div>
             </div>
         </div>
-
-        <div class="col-md-6 col-lg-4  col-xs-12">
+      <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                    <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                <h4 class="text1">Clients</h4><span>
+            <h4 class="text1">Clients</h4><span>
                  </div>
             </div>
         </div>
-
-        <div class="col-md-6 col-lg-4  col-xs-12">
+      <div class="col-md-6 col-lg-4  col-xs-12">
             <div class="card1">
                 <div class="header">
                     <span class="card-action"><a target="new_blank">
                         <img class="toc" src="images/summary.png"/></img></a></span>
-                <h4 class="text1">Reports</h4><span>
+            <h4 class="text1">Reports</h4><span>
                  </div>
             </div>
         </div>

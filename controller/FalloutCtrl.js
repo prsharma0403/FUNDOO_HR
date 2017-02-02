@@ -15,44 +15,51 @@ angular.module('mainApp')
     $scope.yesterday = date;
     var timeStamp = date.getTime();
     var query = {
-        timeStamp: timeStamp
+    timeStamp: timeStamp
               };
     var config = {
-           "x-token": token
+    "x-token": token
                  }
-  restService.getRequest('readFalloutAttendanceEmployee', query,config).then(function(data) {
+    restService.getRequest('readFalloutAttendanceEmployee',
+    query,config).then(function(data)
+    {
           // console.log(data.data);
-            $scope.items = data.data.falloutEmployee;
-             $scope.fall = data.data.falloutNumber;
-              $scope.totalEmployee = data.data.totalEmployee;
-               $scope.imageUrl = data.data.imageUrl;
-             });
-             console.log("hii");
-             $scope.confirm=function () {
-             var token=localStorage.getItem('satellizer_token');
-             var timeStamp = date.getTime();
+      $scope.items = data.data.falloutEmployee;
+      $scope.fall = data.data.falloutNumber;
+      $scope.totalEmployee = data.data.totalEmployee;
+      $scope.imageUrl = data.data.imageUrl;
+     });
+    console.log("hii");
+    $scope.confirm=function () {
+      var token=localStorage.getItem('satellizer_token');
+      var timeStamp = date.getTime();
       var query = {
-           timeStamp: timeStamp
-            };
+            timeStamp: timeStamp
+        };
         var config = {
-         "x-token": token
+                    "x-token": token
        };
-       console.log( "x-token");
-  restService.postRequest('sendEmailToFalloutEmployee',query,config).then(function (data) {
-               if (data.data.status === 200) {
-                 $('#mymodal1').modal('show');
-                   $scope.message = "Sent Successfully!";
-               } else {
-                   $scope.message = "Cannot sent";
-               }
-            });
+    console.log( "x-token");
+    restService.postRequest('sendEmailToFalloutEmployee',query,
+    config).then(function (data)
+    {
+      if  (data.data.status === 200) {
+          $('#mymodal1').modal('show');
+          $scope.message = "Sent Successfully!";
+     }
+     else {
+           $scope.message = "Cannot sent";
+        }
+    });
            console.log("heelo");
-         }
+     }
        $scope.cancel = function() {
-               console.log("message cant sent");
+       console.log("message cant sent");
            }
-               $scope.cardItems = [];
-      $scope.employees = function(employeeName, employeeStatus, company, mobile, emailId) {
+      $scope.cardItems = [];
+      $scope.employees = function(employeeName, employeeStatus, company,
+         mobile, emailId)
+  {
       var objAdded = {
       employeeName: employeeName,
       employeeStatus: employeeStatus,

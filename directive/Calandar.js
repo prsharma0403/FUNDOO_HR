@@ -61,20 +61,22 @@ angular.module("mainApp").directive("calendar", function()
             $scope.clickDay = function(date) //clicked date appear
             {
               $rootScope.clickDate = date._d;
-                console.log("date" + $rootScope.clickDate);
-                 var timeStamp = date.unix() * 1000; //timesatamp coverted in milliseconds
-                    $state.go("home.unmarkedEmp", {
+              console.log("date" + $rootScope.clickDate);
+              var timeStamp = date.unix() * 1000; //timesatamp coverted in milliseconds
+              $state.go("home.unmarkedEmp",
+               {
                     timeStamp
                 });
             }
             var query = {
-               timeStamp
+                   timeStamp
             };
             var config = {
-                "x-token": token
+                  "x-token": token
             }
             restService.getRequest('readMonthlyAttendanceSummary', query,
-            config).then(function(data) {
+            config).then(function(data)
+            {
                 console.log(data);
                 $scope.attendance = {};
                 data.data.attendance.forEach(function(value, key) {
@@ -89,7 +91,7 @@ angular.module("mainApp").directive("calendar", function()
             //read umarked employee data for next and previous month buid
             $scope.readUnmark = function(timeStamp) {
                 var query = {
-                    timeStamp
+                      timeStamp
                 };
                 var config = {
                     "x-token": token
@@ -97,8 +99,8 @@ angular.module("mainApp").directive("calendar", function()
                 restService.getRequest('readMonthlyAttendanceSummary', query,
                  config).then(function(data) {
                   $scope.attendance = {};
-                    data.data.attendance.forEach(function(value, key) {
-                        $scope.attendance[value.day] = {
+                  data.data.attendance.forEach(function(value, key) {
+                    $scope.attendance[value.day] = {
                             "unmarked": value.unmarked,
                             "totalEmployee": data.data.totalEmployee
                         };
@@ -109,7 +111,7 @@ angular.module("mainApp").directive("calendar", function()
             };
         }
      };
-
+s
     function _removeTime(date) {
     return date.day(0).hour(0).minute(0).second(0).millisecond(0);
     }

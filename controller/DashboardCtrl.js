@@ -3,7 +3,7 @@
 */
 
 'use strict';
-angular.module('mainApp').controller('DashCtrl', function($scope, $location,
+  angular.module('mainApp').controller('DashCtrl', function($scope, $location,
         $stateParams, $state, $auth, $http, localStorageService, restService)
 {
     //storing token in varible
