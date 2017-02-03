@@ -26,8 +26,9 @@ var mainApp = angular.module("mainApp", ['ui.router', 'ngMaterial', 'ngAnimate',
         }
         return deferred.promise;
     }];
+
     /* $stateProvider give different states*/
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dash');
     /* $stateProvider give different states*/
     $stateProvider
     /* configure the home state*/

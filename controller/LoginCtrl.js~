@@ -21,7 +21,7 @@
       $auth.login($scope.user, config)
       .then(function(data)
       {
-      $state.go('home.DashBoard');
+      $state.go('home');
     })
     .catch(function(error)
     {
@@ -33,7 +33,7 @@
     $auth.authenticate(provider)
     .then(function() {
     console.log("You have successfully signed in!" + provider + "!");
-    $state.go('home.DashBoard');
+    $state.go('home');
   })
     .catch(function(error) {
     $scope.dataLoading = false;

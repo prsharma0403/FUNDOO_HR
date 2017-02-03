@@ -1,7 +1,7 @@
 /**
 *restServices rest call with baseurl*/
 angular.module('mainApp').service('restService', function ($http, $log, $q) {
-   var baseUrl = "http://192.168.0.7:3000/";
+   var baseUrl = "http://192.168.0.16:3000/";
    /**
    *  function for GET */
    this.getRequest = function (path, query,config) {

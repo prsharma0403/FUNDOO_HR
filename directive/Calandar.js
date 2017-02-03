@@ -25,8 +25,8 @@ angular.module("mainApp").directive("calendar", function()
                     console.log(scope.month);
                     _buildMonth(scope, previous, scope.month);
                 } else if (scope.called === undefined) {
-                    scope.selected = _removeTime(scope.selected || moment());
-                    scope.month = scope.selected.clone();
+                    // scope.selected = _removeTime(scope.selected || moment());
+                    scope.month = scope.selected;
                     var start = scope.selected.clone();
                     start.date(1);
                     _removeTime(start.day(0));
@@ -50,18 +50,17 @@ angular.module("mainApp").directive("calendar", function()
             scope.readUnmark(timeStamp2);
            };
         },
-        controller: function($http, $scope, $stateParams, $state, restService,
-           $filter, $rootScope) {
+        controller: function($http, $scope, $stateParams, $state, restService,$filter, $rootScope) {
 
-            // debugger;
-            $scope.day = moment();
+            // $scope.day = moment();
+            $scope.selected=moment();
+            console.log($scope.selected);
             var token = localStorage.getItem('satellizer_token');
             var date = new Date();
             var timeStamp = Date.now(); //date.getTime();
             $scope.clickDay = function(date) //clicked date appear
             {
               // $rootScope.clickDate = date._d;
-              console.log("date" + $rootScope.clickDate);
               var timeStamp = date.unix() * 1000; //timesatamp coverted in milliseconds
               $state.go("home.unmarkedEmp",
                {
@@ -77,7 +76,6 @@ angular.module("mainApp").directive("calendar", function()
             restService.getRequest('readMonthlyAttendanceSummary', query,
             config).then(function(data)
             {
-                console.log(data);
                 $scope.attendance = {};
                 data.data.attendance.forEach(function(value, key) {
                 $scope.attendance[value.day] = {
